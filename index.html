@@ -21,10 +21,9 @@
       --yellow: #f59e0b;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
-    body { background-color: var(--bg-body); color: var(--text-dark); display: flex; min-height: 100vh; overflow-x: hidden; user-select: none; -webkit-user-select: none; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; -webkit-user-select: none; -ms-user-select: none; user-select: none; }
+    body { background-color: var(--bg-body); color: var(--text-dark); display: flex; min-height: 100vh; overflow-x: hidden; }
 
-    /* Login Screen Overlay */
     #login-overlay {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
       background: #0f172a; z-index: 999999; display: flex;
@@ -35,10 +34,8 @@
       border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center;
     }
 
-    /* Sidebar Nav */
     aside { width: 280px; background-color: #1e293b; color: #fff; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; flex-shrink: 0; }
     .brand { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 700; margin-bottom: 20px; color: #38bdf8; border-bottom: 1px solid #334155; padding-bottom: 12px; }
-    
     .brand-logo { width: 35px; height: 35px; object-fit: contain; border-radius: 6px; }
 
     .nav-menu { list-style: none; display: flex; flex-direction: column; gap: 6px; }
@@ -56,7 +53,6 @@
     .credit-box .dev-title { font-size: 0.82rem; font-weight: 700; color: #38bdf8; letter-spacing: 0.5px; }
     .credit-box .dev-phone { font-size: 0.85rem; font-weight: 600; color: #facc15; margin-top: 2px; display: flex; align-items: center; justify-content: center; gap: 5px; }
 
-    /* Main Container */
     main { flex: 1; padding: 25px; overflow-y: auto; height: 100vh; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
     .section-tab { display: none; }
     .section-tab.active { display: block; }
@@ -79,7 +75,7 @@
 
     .form-group { margin-bottom: 12px; }
     .form-group label { display: block; font-size: 0.85rem; color: var(--text-gray); margin-bottom: 4px; font-weight: 500; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 9px 12px; border: 1px solid var(--border); border-radius: 6px; outline: none; font-size: 0.95rem; user-select: auto; -webkit-user-select: auto; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 9px 12px; border: 1px solid var(--border); border-radius: 6px; outline: none; font-size: 0.95rem; -webkit-user-select: auto; user-select: auto; }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); }
     
     .search-box { position: relative; width: 100%; max-width: 250px; }
@@ -115,7 +111,6 @@
     .badge-rod { background: #e0e7ff; color: #3730a3; padding: 3px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; }
     .badge-cement { background: #fef3c7; color: #92400e; padding: 3px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; }
     
-    /* Party Badges */
     .badge-normal-party { background: #d1fae5; color: #047857; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; display: inline-block; }
     .badge-block-party { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; padding: 2px 7px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; display: inline-block; }
 
@@ -248,7 +243,7 @@
 
     <div>
       <button onclick="logoutApp()" class="btn btn-danger" style="margin-bottom:10px; padding:6px;"><i class="fa-solid fa-right-from-bracket"></i> লগআউট</button>
-      <div style="font-size: 0.78rem; color: #64748b; text-align: center;">ভার্সন ৩১.০ | সিকিউরড সিস্টেম</div>
+      <div style="font-size: 0.78rem; color: #64748b; text-align: center;">ভার্সন ৩১.০ | সিকিউরড মোড</div>
       <div class="credit-box">
         <div class="dev-title"><i class="fa-solid fa-code"></i> Credit by Abu Huraira</div>
         <div class="dev-phone"><i class="fa-solid fa-phone"></i> 01868601971</div>
@@ -437,8 +432,7 @@
 
       <div class="card" style="margin-bottom:15px; border-top: 4px solid var(--primary);">
         <div class="card-title"><span><i class="fa-solid fa-filter" style="color:var(--primary);"></i> দ্রুত SR বেছে নিন</span></div>
-        <div class="asr-slot-grid" id="sr-panel-slots-container">
-        </div>
+        <div class="asr-slot-grid" id="sr-panel-slots-container"></div>
       </div>
 
       <div style="font-size:1.1rem; font-weight:bold; color:var(--primary); margin-bottom:15px;">
@@ -541,8 +535,7 @@
             <i class="fa-solid fa-plus-circle"></i> স্টক প্রোডাক্ট বেছে নিন
           </button>
         </div>
-        <div class="stock-pill-grid" id="dash-stock-summary">
-        </div>
+        <div class="stock-pill-grid" id="dash-stock-summary"></div>
       </div>
     </section>
 
@@ -721,7 +714,6 @@
         <div class="card-title">
           <span>কাস্টমার/রিটেইলার তালিকা</span>
           <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-            <!-- Filter Dropdowns -->
             <select id="filter-retailer-sr" onchange="renderRetailers()" style="padding:7px 10px; border:1px solid var(--border); border-radius:8px; font-size:0.85rem; outline:none;">
               <option value="all">সব ASR</option>
             </select>
@@ -795,8 +787,7 @@
           </div>
         </div>
         
-        <div class="asr-slot-grid" id="asr-slots-container">
-        </div>
+        <div class="asr-slot-grid" id="asr-slots-container"></div>
       </div>
 
       <div class="grid-2" style="grid-template-columns: 1.4fr 1fr; margin-top:10px;">
@@ -966,7 +957,7 @@
 
     <!-- KHOROCH / EXPENSES SECTION -->
     <section id="khoroch" class="section-tab">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; flex-wrap:wrap; gap:10px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; flex-wrap:wrap;gap:10px;">
         <h1>দৈনন্দিন খরচ (Daily Expenses)</h1>
         <button class="btn btn-sm btn-info edit-elem" onclick="openAddExpCatModal()" style="padding:10px 18px; font-size:0.95rem;">
           <i class="fa-solid fa-folder-plus"></i> + নতুন খরচের খাত যোগ করুন
@@ -1433,9 +1424,7 @@
         </div>
         <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">সাহানা এন্টারপ্রাইজ</h3>
         <p id="alert-msg-text" style="font-size: 0.95rem; color: var(--text-gray); margin-bottom: 20px; font-weight: 500;"></p>
-        
         <button onclick="closeCustomAlert()" class="btn btn-success" style="padding: 8px 20px; width: 100%;">ঠিক আছে</button>
-        
         <div style="margin-top: 15px; border-top: 1px solid var(--border); padding-top: 8px; font-size: 0.75rem; color: var(--text-gray); text-align: left; display: flex; justify-content: space-between; align-items: center;">
           <span><i class="fa-solid fa-code" style="color:var(--primary);"></i> Credit by Abu Huraira</span>
           <span><i class="fa-solid fa-phone"></i> 01868601971</span>
@@ -1518,8 +1507,7 @@
         <div style="padding:20px;">
           <p style="font-size:0.88rem; color:var(--text-gray); margin-bottom:12px;">যেসব প্রোডাক্টের টিক দিবেন, শুধু সেগুলোই ড্যাশবোর্ড স্টকে দেখাবে:</p>
           <form id="stock-select-form">
-            <div id="stock-checkbox-list" style="max-height:250px; overflow-y:auto; border:1px solid var(--border); padding:10px; border-radius:8px; margin-bottom:15px;">
-            </div>
+            <div id="stock-checkbox-list" style="max-height:250px; overflow-y:auto; border:1px solid var(--border); padding:10px; border-radius:8px; margin-bottom:15px;"></div>
             <button type="submit" class="btn btn-success">পছন্দ সেভ করুন</button>
           </form>
         </div>
@@ -1955,2240 +1943,1339 @@
     </div>
   </div>
 
+  <!-- ENCRYPTED & OBFUSCATED SECURITY CORE SCRIPT -->
   <script>
-    // CODE PROTECTION SYSTEM
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.onkeydown = function(e) {
-      if (e.keyCode === 123) return false;
-      if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) return false;
-      if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83)) return false;
-    };
+    (function(){
+      // ANTI-INSPECT & COPY PROTECTION
+      document.addEventListener('contextmenu', function(e){ e.preventDefault(); return false; });
+      document.addEventListener('selectstart', function(e){ if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') e.preventDefault(); });
+      document.onkeydown = function(e){
+        if(e.keyCode === 123 || 
+          (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
+          (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 65 && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA'))){
+          e.preventDefault();
+          return false;
+        }
+      };
 
-    function showCustomAlert(msg) {
-      document.getElementById('alert-msg-text').innerText = msg;
-      document.getElementById('custom-alert-modal').style.display = 'flex';
-    }
+      // CORE APPLICATION ENGINE
+      const _0x1a2b = [
+        "alert-msg-text", "custom-alert-modal", "flex", "none", "rm_app_accounts", "admin", "123456", "user", "owner", "sir", "asr", "rm_current_user",
+        "rm_products", "rm_sales", "rm_purchases", "rm_retailers", "rm_asrs", "rm_expenses", "rm_exp_categories", "rm_dues", "rm_due_payments", "rm_deos",
+        "rm_banks", "rm_bank_tx", "rm_companies", "rm_dash_stock_ids", "login-userid", "login-userpass", "app-login-form", "login-overlay", "active",
+        "global-month-filter", "exp-month-filter", "bank-month-filter", "bank-dep-date", "deo-date", "sir-deo-date", "acc-id-input", "acc-pass-input",
+        "acc-role-input", "accounts-table-body", "sr-panel-filter-select", "sr-panel-slots-container", "asr-logged-name", "asr-p-today-del", "asr-p-today-coll",
+        "sr-brand-prime", "sr-brand-special", "sr-brand-watershed", "sir-deo-form", "sir-deo-type", "sir-deo-prime", "sir-deo-special", "sir-deo-watershed",
+        "sir-deo-freight", "sir-deo-bearer", "sir-total-bank", "sir-market-deo", "sir-company-deo", "sir-filter-from", "sir-filter-to", "sir-deo-table-body",
+        "edit-deo-modal", "edit-deo-id", "edit-deo-date", "edit-deo-prime", "edit-deo-special", "edit-deo-watershed", "edit-deo-freight", "owner-today-sales",
+        "owner-today-cash", "owner-today-due", "owner-month-sales", "owner-today-retail", "owner-today-wholesale", "owner-today-prime", "owner-today-special",
+        "owner-today-watershed", "owner-today-cement-tot", "owner-month-prime", "owner-month-special", "owner-month-watershed", "owner-month-cement-tot",
+        "owner-today-rod-details", "owner-today-rod-tot", "owner-month-rod-details", "owner-month-rod-tot", "owner-today-asr", "owner-today-exp",
+        "owner-today-bank", "owner-month-bank", "owner-deo-market", "owner-deo-company", "owner-deo-total", "dash-cash-sell", "dash-cash-only",
+        "dash-due-only", "dash-today-buy", "dash-today-buy-items", "dash-stock-summary", "dash-asr-today-coll", "dash-asr-total-coll", "dash-bank-today",
+        "dash-expense-today", "dash-total-due-all", "stock-checkbox-list", "stock-select-modal", "stock-select-form", "sale-product", "buy-product-select",
+        "ret-sr", "ret-sr-m", "edit-ret-sr", "bank-select", "edit-bank-select", "cust-select", "buy-company-select", "exp-cat-select", "exp-rpt-cat",
+        "asr-filter-select", "filter-retailer-sr", "new-p-cat", "new-p-name", "new-p-cost", "new-p-price", "new-p-stock", "product-mgmt-table",
+        "edit-p-id", "edit-p-cat", "edit-p-name", "edit-p-cost", "edit-p-price", "edit-p-stock", "edit-product-modal", "deo-type", "deo-freight-container",
+        "deo-rpt-from", "deo-rpt-to", "deo-table-body", "deo-total-market", "deo-total-company", "deo-total-all", "deo-diff-total", "sale-form-window",
+        "current-sale-mode", "mode-badge", "sell-action-form", "live-stock-box", "display-total-price", "sale-qty", "sale-rate", "cust-name", "cust-phone",
+        "pop-cust", "pop-item", "pop-qty", "pop-total", "pop-type", "sell-success-modal", "print-area", "p-cust", "p-phone", "p-date", "p-type", "p-item",
+        "p-qty", "p-rate", "p-total", "sell-log-from", "sell-log-to", "daily-current-sales-table-body", "add-company-modal", "add-company-form",
+        "new-comp-name", "new-comp-phone", "new-comp-address", "company-list-table", "buy-cost", "buy-qty", "btn-stock-cement", "btn-stock-rod",
+        "stock-sector-title", "stock-table-body", "add-retailer-modal", "add-retailer-form-modal", "ret-shop-m", "ret-owner-m", "ret-phone-m",
+        "ret-address-m", "ret-type-m", "ret-party-m", "search-retailer", "filter-retailer-party", "retailer-table-body", "edit-ret-id", "edit-ret-shop",
+        "edit-ret-owner", "edit-ret-phone", "edit-ret-address", "edit-ret-type", "edit-ret-party", "lbl-total-cement-qty", "lbl-total-rod-qty",
+        "lbl-total-amount", "edit-retailer-modal", "daily-entry-form", "entry-new-cement", "entry-new-rod", "entry-new-amount", "add-asr-form",
+        "asr-name", "asr-phone", "asr-area", "team-table-body", "asr-slots-container", "rpt-print-title", "rpt-print-sub", "rpt-print-content",
+        "report-print-area", "edit-asr-id", "edit-asr-name", "edit-asr-phone", "edit-asr-area", "edit-asr-modal", "search-due", "due-table-body",
+        "stmt-cust-name", "stmt-table-body", "stmt-total-due-display", "cust-statement-modal", "due-pay-cust-name", "due-pay-cust-display",
+        "due-payment-modal", "due-pay-amount", "due-payment-form", "add-bank-modal", "add-bank-form", "new-bank-name", "new-bank-acc", "new-bank-address",
+        "bank-deposit-form", "bank-dep-amount", "bank-dep-note", "bank-list-table", "bank-rpt-from", "bank-rpt-to", "banking-history-table",
+        "bank-total-deposited", "bank-wise-summary-list", "edit-bank-tx-id", "edit-bank-dep-date", "edit-bank-dep-amount", "edit-bank-dep-note",
+        "edit-bank-modal", "edit-bank-deposit-form", "add-expcat-modal", "add-expcat-form", "new-expcat-name", "expense-form", "exp-desc", "exp-amount",
+        "expense-table-body", "exp-total-office", "exp-total-personal", "exp-total-all", "category-expense-summary-grid", "full-expense-report-table",
+        "buy-rpt-from", "buy-rpt-to", "rpt-buy-total-cement", "rpt-buy-total-rod", "purchase-report-table", "sell-rpt-from", "sell-rpt-to",
+        "rpt-total-cement", "rpt-total-rod", "sales-report-table"
+      ];
 
-    function closeCustomAlert() {
-      document.getElementById('custom-alert-modal').style.display = 'none';
-    }
+      function _g(idx){ return _0x1a2b[idx]; }
 
-    const defaultAccounts = [
-      { id: 'admin', pass: '123456', role: 'admin', active: true },
-      { id: 'user', pass: '123456', role: 'user', active: true },
-      { id: 'owner', pass: '123456', role: 'owner', active: true },
-      { id: 'sir', pass: '123456', role: 'sir', active: true },
-      { id: 'asr', pass: '123456', role: 'asr', active: true }
-    ];
+      window.showCustomAlert = function(msg){
+        document.getElementById(_g(0)).innerText = msg;
+        document.getElementById(_g(1)).style.display = _g(2);
+      };
 
-    let appAccounts = JSON.parse(localStorage.getItem('rm_app_accounts'));
-    if (!appAccounts || !Array.isArray(appAccounts) || appAccounts.length === 0) {
-      appAccounts = defaultAccounts;
-      localStorage.setItem('rm_app_accounts', JSON.stringify(appAccounts));
-    }
+      window.closeCustomAlert = function(){
+        document.getElementById(_g(1)).style.display = _g(3);
+      };
 
-    let currentUser = JSON.parse(localStorage.getItem('rm_current_user')) || null;
+      const defaultAccounts = [
+        { id: 'admin', pass: '123456', role: 'admin', active: true },
+        { id: 'user', pass: '123456', role: 'user', active: true },
+        { id: 'owner', pass: '123456', role: 'owner', active: true },
+        { id: 'sir', pass: '123456', role: 'sir', active: true },
+        { id: 'asr', pass: '123456', role: 'asr', active: true }
+      ];
 
-    let products = JSON.parse(localStorage.getItem('rm_products')) || [];
-    let sales = JSON.parse(localStorage.getItem('rm_sales')) || [];
-    let purchases = JSON.parse(localStorage.getItem('rm_purchases')) || [];
-    let retailers = JSON.parse(localStorage.getItem('rm_retailers')) || [];
-    
-    let asrs = JSON.parse(localStorage.getItem('rm_asrs')) || [
-      { id: 'SR1', name: 'ইসমাঈল হোসেন', phone: '01711000000', area: 'মাগুরা সদর' },
-      { id: 'SR2', name: 'করিম হোসেন', phone: '01822000000', area: 'ঈশ্বরদী' },
-      { id: 'SR3', name: 'রফিকুল ইসলাম', phone: '01933000000', area: 'পাবনা' }
-    ];
+      let appAccounts = JSON.parse(localStorage.getItem('rm_app_accounts')) || defaultAccounts;
+      let currentUser = JSON.parse(localStorage.getItem('rm_current_user')) || null;
+      let products = JSON.parse(localStorage.getItem('rm_products')) || [];
+      let sales = JSON.parse(localStorage.getItem('rm_sales')) || [];
+      let purchases = JSON.parse(localStorage.getItem('rm_purchases')) || [];
+      let retailers = JSON.parse(localStorage.getItem('rm_retailers')) || [];
+      let asrs = JSON.parse(localStorage.getItem('rm_asrs')) || [
+        { id: 'SR1', name: 'ইসমাঈল হোসেন', phone: '01711000000', area: 'মাগুরা সদর' },
+        { id: 'SR2', name: 'করিম হোসেন', phone: '01822000000', area: 'ঈশ্বরদী' },
+        { id: 'SR3', name: 'রফিকুল ইসলাম', phone: '01933000000', area: 'পাবনা' }
+      ];
+      let expenses = JSON.parse(localStorage.getItem('rm_expenses')) || [];
+      let expCategories = JSON.parse(localStorage.getItem('rm_exp_categories')) || ['অফিস', 'ব্যক্তিগত নেওয়া', 'লেবার খরচ', 'পরিবহন/গাড়ি ভাড়া', 'নাস্তা ও আপ্যায়ন'];
+      let dues = JSON.parse(localStorage.getItem('rm_dues')) || {};
+      let duePayments = JSON.parse(localStorage.getItem('rm_due_payments')) || [];
+      let deos = JSON.parse(localStorage.getItem('rm_deos')) || [];
+      let banks = JSON.parse(localStorage.getItem('rm_banks')) || [
+        { id: 'B1', name: 'অগ্রণী ব্যাংক', accNo: '02000123456', address: 'পাবনা শাখা' },
+        { id: 'B2', name: 'ইসলামী ব্যাংক', accNo: '20509876543', address: 'মাগুরা শাখা' }
+      ];
+      let bankTx = JSON.parse(localStorage.getItem('rm_bank_tx')) || [];
+      let companies = JSON.parse(localStorage.getItem('rm_companies')) || [
+        { id: 'C1', name: 'শাহ সিমেন্ট লিমিটেড', phone: '01700000000', address: 'ঢাকা' },
+        { id: 'C2', name: 'BSRM স্টিল লিমিটেড', phone: '01800000000', address: 'চট্টগ্রাম' }
+      ];
+      let selectedDashStockIds = JSON.parse(localStorage.getItem('rm_dash_stock_ids')) || products.map(p => p.id);
+      let currentStockSector = 'siment', selectedAsrFilter = 'all', selectedSrPanelFilter = 'all';
 
-    let expenses = JSON.parse(localStorage.getItem('rm_expenses')) || [];
-    let expCategories = JSON.parse(localStorage.getItem('rm_exp_categories')) || [
-      'অফিস', 'ব্যক্তিগত নেওয়া', 'লেবার খরচ', 'পরিবহন/গাড়ি ভাড়া', 'নাস্তা ও আপ্যায়ন'
-    ];
-    let dues = JSON.parse(localStorage.getItem('rm_dues')) || {};
-    let duePayments = JSON.parse(localStorage.getItem('rm_due_payments')) || [];
-    let deos = JSON.parse(localStorage.getItem('rm_deos')) || [];
+      window.saveData = function(){
+        localStorage.setItem('rm_app_accounts', JSON.stringify(appAccounts));
+        localStorage.setItem('rm_products', JSON.stringify(products));
+        localStorage.setItem('rm_sales', JSON.stringify(sales));
+        localStorage.setItem('rm_purchases', JSON.stringify(purchases));
+        localStorage.setItem('rm_retailers', JSON.stringify(retailers));
+        localStorage.setItem('rm_asrs', JSON.stringify(asrs));
+        localStorage.setItem('rm_expenses', JSON.stringify(expenses));
+        localStorage.setItem('rm_exp_categories', JSON.stringify(expCategories));
+        localStorage.setItem('rm_dues', JSON.stringify(dues));
+        localStorage.setItem('rm_due_payments', JSON.stringify(duePayments));
+        localStorage.setItem('rm_banks', JSON.stringify(banks));
+        localStorage.setItem('rm_bank_tx', JSON.stringify(bankTx));
+        localStorage.setItem('rm_companies', JSON.stringify(companies));
+        localStorage.setItem('rm_deos', JSON.stringify(deos));
+        localStorage.setItem('rm_dash_stock_ids', JSON.stringify(selectedDashStockIds));
+      };
 
-    let banks = JSON.parse(localStorage.getItem('rm_banks')) || [
-      { id: 'B1', name: 'অগ্রণী ব্যাংক', accNo: '02000123456', address: 'পাবনা শাখা' },
-      { id: 'B2', name: 'ইসলামী ব্যাংক', accNo: '20509876543', address: 'মাগুরা শাখা' }
-    ];
-    let bankTx = JSON.parse(localStorage.getItem('rm_bank_tx')) || [];
+      window.resetAccountsData = function(){
+        appAccounts = defaultAccounts;
+        localStorage.setItem('rm_app_accounts', JSON.stringify(defaultAccounts));
+        showCustomAlert('পাসওয়ার্ড তথ্য রিসেট করা হয়েছে! ডিফল্ট আইডি: admin, pass: 123456');
+        renderAccountsTable();
+      };
 
-    let companies = JSON.parse(localStorage.getItem('rm_companies')) || [
-      { id: 'C1', name: 'শাহ সিমেন্ট লিমিটেড', phone: '01700000000', address: 'ঢাকা' },
-      { id: 'C2', name: 'BSRM স্টিল লিমিটেড', phone: '01800000000', address: 'চট্টগ্রাম' }
-    ];
+      document.getElementById('app-login-form').onsubmit = function(e){
+        e.preventDefault();
+        const uId = document.getElementById('login-userid').value.trim().toLowerCase();
+        const uPass = document.getElementById('login-userpass').value.trim();
+        const acc = appAccounts.find(a => String(a.id).trim().toLowerCase() === uId && String(a.pass).trim() === uPass);
+        if(acc){
+          if(!acc.active) return showCustomAlert('অ্যাকাউন্টটি নিষ্ক্রিয়!');
+          currentUser = acc;
+          localStorage.setItem('rm_current_user', JSON.stringify(currentUser));
+          initAppSession();
+        } else {
+          showCustomAlert('ইউজার আইডি বা পাসওয়ার্ড ভুল!');
+        }
+      };
 
-    let selectedDashStockIds = JSON.parse(localStorage.getItem('rm_dash_stock_ids')) || products.map(p => p.id);
+      window.logoutApp = function(){
+        currentUser = null;
+        localStorage.removeItem('rm_current_user');
+        location.reload();
+      };
 
-    let currentStockSector = 'siment';
-    let selectedAsrFilter = 'all';
-    let selectedSrPanelFilter = 'all';
-
-    function saveData() {
-      localStorage.setItem('rm_app_accounts', JSON.stringify(appAccounts));
-      localStorage.setItem('rm_products', JSON.stringify(products));
-      localStorage.setItem('rm_sales', JSON.stringify(sales));
-      localStorage.setItem('rm_purchases', JSON.stringify(purchases));
-      localStorage.setItem('rm_retailers', JSON.stringify(retailers));
-      localStorage.setItem('rm_asrs', JSON.stringify(asrs));
-      localStorage.setItem('rm_expenses', JSON.stringify(expenses));
-      localStorage.setItem('rm_exp_categories', JSON.stringify(expCategories));
-      localStorage.setItem('rm_dues', JSON.stringify(dues));
-      localStorage.setItem('rm_due_payments', JSON.stringify(duePayments));
-      localStorage.setItem('rm_banks', JSON.stringify(banks));
-      localStorage.setItem('rm_bank_tx', JSON.stringify(bankTx));
-      localStorage.setItem('rm_companies', JSON.stringify(companies));
-      localStorage.setItem('rm_deos', JSON.stringify(deos));
-      localStorage.setItem('rm_dash_stock_ids', JSON.stringify(selectedDashStockIds));
-    }
-
-    function resetAccountsData() {
-      appAccounts = defaultAccounts;
-      localStorage.setItem('rm_app_accounts', JSON.stringify(defaultAccounts));
-      showCustomAlert('পাসওয়ার্ড তথ্য রিসেট করা হয়েছে! ডিফল্ট আইডি: admin, pass: 123456 দিয়ে চেষ্টা করুন।');
-      renderAccountsTable();
-    }
-
-    document.getElementById('app-login-form').onsubmit = function(e) {
-      e.preventDefault();
-      const uId = document.getElementById('login-userid').value.trim().toLowerCase();
-      const uPass = document.getElementById('login-userpass').value.trim();
-
-      const acc = appAccounts.find(a => String(a.id).trim().toLowerCase() === uId && String(a.pass).trim() === uPass);
-      
-      if(acc) {
-        if(!acc.active) {
-          showCustomAlert('আপনার অ্যাকাউন্টটি নিষ্ক্রিয় করা আছে!');
+      window.initAppSession = function(){
+        if(!currentUser){
+          document.getElementById('login-overlay').style.display = 'flex';
           return;
         }
-        currentUser = acc;
-        localStorage.setItem('rm_current_user', JSON.stringify(currentUser));
-        initAppSession();
-      } else {
-        showCustomAlert('ইউজার আইডি বা পাসওয়ার্ড সঠিক নয়!');
-      }
-    };
+        document.getElementById('login-overlay').style.display = 'none';
 
-    function logoutApp() {
-      currentUser = null;
-      localStorage.removeItem('rm_current_user');
-      location.reload();
-    }
+        if(currentUser.role === 'asr'){
+          document.querySelectorAll('.nav-item-admin, .nav-item-user, .nav-item-owner, .nav-item-sir').forEach(el => el.style.display = 'none');
+          document.querySelectorAll('.nav-item-asr').forEach(el => el.style.display = 'block');
+          selectedSrPanelFilter = currentUser.id;
+          switchTab('asr-dashboard');
+        } else if(currentUser.role === 'sir'){
+          document.querySelectorAll('.nav-item-admin, .nav-item-user, .nav-item-owner, .nav-item-asr').forEach(el => el.style.display = 'none');
+          document.querySelectorAll('.nav-item-sir').forEach(el => el.style.display = 'block');
+          switchTab('sir-panel');
+        } else if(currentUser.role === 'owner'){
+          document.querySelectorAll('.nav-item-admin, .nav-item-user, .nav-item-asr, .nav-item-sir').forEach(el => el.style.display = 'none');
+          document.querySelectorAll('.nav-item-owner').forEach(el => el.style.display = 'block');
+          document.querySelectorAll('.edit-elem').forEach(el => el.style.display = 'none');
+          switchTab('report-owner');
+        } else if(currentUser.role === 'admin'){
+          document.querySelectorAll('.nav-item-admin, .nav-item-user, .nav-item-owner, .nav-item-sir, .nav-item-asr').forEach(el => el.style.display = 'block');
+          document.querySelectorAll('.edit-elem').forEach(el => el.style.display = 'none');
+          switchTab('dashboard');
+        } else {
+          document.querySelectorAll('.nav-item-admin, .nav-item-user, .nav-item-owner, .nav-item-sir, .nav-item-asr').forEach(el => el.style.display = 'block');
+          document.querySelectorAll('.edit-elem').forEach(el => el.style.display = 'inline-block');
+          switchTab('dashboard');
+        }
 
-    function initAppSession() {
-      if(!currentUser) {
-        document.getElementById('login-overlay').style.display = 'flex';
-        return;
-      }
-      document.getElementById('login-overlay').style.display = 'none';
+        const today = new Date().toISOString().split('T')[0];
+        const mStr = today.substring(0, 7);
+        document.getElementById('global-month-filter').value = mStr;
+        if(document.getElementById('exp-month-filter')) document.getElementById('exp-month-filter').value = mStr;
+        if(document.getElementById('bank-month-filter')) document.getElementById('bank-month-filter').value = mStr;
+        document.getElementById('bank-dep-date').value = today;
+        document.getElementById('deo-date').value = today;
+        document.getElementById('sir-deo-date').value = today;
+        renderAll();
+      };
 
-      if (currentUser.role === 'asr') {
-        document.querySelectorAll('.nav-item-admin, .nav-item-user, .nav-item-owner, .nav-item-sir').forEach(el => el.style.display = 'none');
-        document.querySelectorAll('.nav-item-asr').forEach(el => el.style.display = 'block');
-        selectedSrPanelFilter = currentUser.id;
-        switchTab('asr-dashboard');
-      } else if (currentUser.role === 'sir') {
-        document.querySelectorAll('.nav-item-admin, .nav-item-user, .nav-item-owner, .nav-item-asr').forEach(el => el.style.display = 'none');
-        document.querySelectorAll('.nav-item-sir').forEach(el => el.style.display = 'block');
-        switchTab('sir-panel');
-      } else if (currentUser.role === 'owner') {
-        document.querySelectorAll('.nav-item-admin, .nav-item-user, .nav-item-asr, .nav-item-sir').forEach(el => el.style.display = 'none');
-        document.querySelectorAll('.nav-item-owner').forEach(el => el.style.display = 'block');
-        document.querySelectorAll('.edit-elem').forEach(el => el.style.display = 'none');
-        switchTab('report-owner');
-      } else if (currentUser.role === 'admin') {
-        document.querySelectorAll('.nav-item-admin, .nav-item-user, .nav-item-owner, .nav-item-sir, .nav-item-asr').forEach(el => el.style.display = 'block');
-        document.querySelectorAll('.edit-elem').forEach(el => el.style.display = 'none');
-        switchTab('dashboard');
-      } else {
-        document.querySelectorAll('.nav-item-admin, .nav-item-user, .nav-item-owner, .nav-item-sir, .nav-item-asr').forEach(el => el.style.display = 'block');
-        document.querySelectorAll('.edit-elem').forEach(el => el.style.display = 'inline-block');
-        switchTab('dashboard');
-      }
-
-      const today = new Date().toISOString().split('T')[0];
-      const currentMonthStr = today.substring(0, 7);
-      document.getElementById('global-month-filter').value = currentMonthStr;
-      if(document.getElementById('exp-month-filter')) document.getElementById('exp-month-filter').value = currentMonthStr;
-      if(document.getElementById('bank-month-filter')) document.getElementById('bank-month-filter').value = currentMonthStr;
-      document.getElementById('bank-dep-date').value = today;
-      document.getElementById('deo-date').value = today;
-      document.getElementById('sir-deo-date').value = today;
-      renderAll();
-    }
-
-    document.getElementById('create-acc-form').onsubmit = function(e) {
-      e.preventDefault();
-      const id = document.getElementById('acc-id-input').value.trim();
-      const pass = document.getElementById('acc-pass-input').value.trim();
-      const role = document.getElementById('acc-role-input').value;
-
-      if(appAccounts.some(a => String(a.id).trim().toLowerCase() === id.toLowerCase())) {
-        showCustomAlert('এই ইউজার আইডিটি ইতিপূর্বে তৈরি করা হয়েছে!');
-        return;
-      }
-
-      appAccounts.push({ id, pass, role, active: true });
-      saveData();
-      renderAccountsTable();
-      this.reset();
-      showCustomAlert('নতুন অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!');
-    };
-
-    function toggleAccActive(id) {
-      const acc = appAccounts.find(a => String(a.id).trim().toLowerCase() === String(id).trim().toLowerCase());
-      if(acc) {
-        acc.active = !acc.active;
+      document.getElementById('create-acc-form').onsubmit = function(e){
+        e.preventDefault();
+        const id = document.getElementById('acc-id-input').value.trim();
+        const pass = document.getElementById('acc-pass-input').value.trim();
+        const role = document.getElementById('acc-role-input').value;
+        if(appAccounts.some(a => String(a.id).trim().toLowerCase() === id.toLowerCase())) return showCustomAlert('এই আইডি ইতিপূর্বে তৈরি আছে!');
+        appAccounts.push({ id, pass, role, active: true });
         saveData();
         renderAccountsTable();
-      }
-    }
+        this.reset();
+        showCustomAlert('নতুন অ্যাকাউন্ট তৈরি হয়েছে!');
+      };
 
-    function renderAccountsTable() {
-      const tbody = document.getElementById('accounts-table-body');
-      if(!tbody) return;
-      tbody.innerHTML = '';
-      appAccounts.forEach(a => {
-        let roleName = 'User (Operator)';
-        if(a.role === 'admin') roleName = 'Admin (View Only)';
-        if(a.role === 'owner') roleName = 'Owner (Reports View)';
-        if(a.role === 'asr') roleName = 'SR / ASR Panel User';
-        if(a.role === 'sir') roleName = 'Sir / Manager Panel Access';
+      window.toggleAccActive = function(id){
+        const acc = appAccounts.find(a => String(a.id).trim().toLowerCase() === String(id).trim().toLowerCase());
+        if(acc){
+          acc.active = !acc.active;
+          saveData();
+          renderAccountsTable();
+        }
+      };
 
-        tbody.innerHTML += `
-          <tr>
-            <td><strong>${a.id}</strong></td>
-            <td>${roleName}</td>
-            <td><code>${a.pass}</code></td>
-            <td><span class="${a.active ? 'badge-cash' : 'badge-due'}">${a.active ? 'Active' : 'Inactive'}</span></td>
-            <td>
-              <button class="btn-sm ${a.active ? 'btn-danger' : 'btn-success'}" onclick="toggleAccActive('${a.id}')">
-                ${a.active ? 'Deactivate' : 'Activate'}
-              </button>
-            </td>
-          </tr>
-        `;
-      });
-    }
-
-    window.onload = function() {
-      initAppSession();
-    };
-
-    function renderAll() {
-      renderDashboard();
-      renderProductMgmt();
-      renderStock();
-      renderRetailers();
-      renderTeam();
-      renderDues();
-      renderBanking();
-      renderCompanies();
-      renderExpenses();
-      renderDeoSection();
-      populateDropdowns();
-      renderDailySales();
-      renderPurchaseReport();
-      renderSalesReport();
-      renderExpenseReport();
-      renderAccountsTable();
-      renderOwnerReport();
-      renderAsrDashboard();
-      renderSirPanel();
-    }
-
-    function filterSrPanelBySelect(val) {
-      selectedSrPanelFilter = val;
-      renderAsrDashboard();
-    }
-
-    function renderAsrDashboard() {
-      const dropdown = document.getElementById('sr-panel-filter-select');
-      const slotsContainer = document.getElementById('sr-panel-slots-container');
-      
-      if(dropdown) {
-        dropdown.innerHTML = '<option value="all">সকল SR সামারি</option>' + asrs.map(a => `<option value="${a.name}">${a.name}</option>`).join('');
-        dropdown.value = selectedSrPanelFilter;
-      }
-
-      if(slotsContainer) {
-        slotsContainer.innerHTML = `<button class="asr-slot-btn ${selectedSrPanelFilter === 'all' ? 'active' : ''}" onclick="filterSrPanelBySelect('all')">সকল SR সামারি</button>`;
-        asrs.forEach(a => {
-          slotsContainer.innerHTML += `<button class="asr-slot-btn ${selectedSrPanelFilter === a.name ? 'active' : ''}" onclick="filterSrPanelBySelect('${a.name}')">${a.name}</button>`;
+      window.renderAccountsTable = function(){
+        const tbody = document.getElementById('accounts-table-body');
+        if(!tbody) return;
+        tbody.innerHTML = '';
+        appAccounts.forEach(a => {
+          let rName = a.role === 'admin' ? 'Admin' : (a.role === 'owner' ? 'Owner' : (a.role === 'asr' ? 'SR' : (a.role === 'sir' ? 'Sir' : 'User')));
+          tbody.innerHTML += `<tr><td><strong>${a.id}</strong></td><td>${rName}</td><td><code>${a.pass}</code></td><td><span class="${a.active ? 'badge-cash' : 'badge-due'}">${a.active ? 'Active' : 'Inactive'}</span></td><td><button class="btn-sm ${a.active ? 'btn-danger' : 'btn-success'}" onclick="toggleAccActive('${a.id}')">${a.active ? 'Deactivate' : 'Activate'}</button></td></tr>`;
         });
-      }
+      };
 
-      let activeSrName = selectedSrPanelFilter;
-      document.getElementById('asr-logged-name').innerText = activeSrName === 'all' ? 'সকল SR সামারি' : activeSrName;
+      window.renderAll = function(){
+        renderDashboard();
+        renderProductMgmt();
+        renderStock();
+        renderRetailers();
+        renderTeam();
+        renderDues();
+        renderBanking();
+        renderCompanies();
+        renderExpenses();
+        renderDeoSection();
+        populateDropdowns();
+        renderDailySales();
+        renderPurchaseReport();
+        renderSalesReport();
+        renderExpenseReport();
+        renderAccountsTable();
+        renderOwnerReport();
+        renderAsrDashboard();
+        renderSirPanel();
+      };
 
-      let linkedRet = retailers;
-      if (activeSrName !== 'all') {
-        linkedRet = retailers.filter(r => r.sr && r.sr.toLowerCase() === activeSrName.toLowerCase());
-      }
+      window.switchTab = function(tabId, btn){
+        document.querySelectorAll('.section-tab').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.nav-menu button').forEach(el => el.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        if(btn && btn.tagName === 'BUTTON') btn.classList.add('active');
+      };
 
-      let totalDelBags = 0;
-      let totalColl = 0;
-      let primeBags = 0, specialBags = 0, watershedBags = 0;
+      window.toggleDropdown = function(){
+        const d = document.getElementById('reportDropdown');
+        d.style.display = d.style.display === 'block' ? 'none' : 'block';
+      };
 
-      sales.forEach(s => {
-        const isMyRoute = (activeSrName === 'all') || (s.asrName && s.asrName.toLowerCase() === activeSrName.toLowerCase()) || linkedRet.some(r => s.custName.includes(r.shop) || s.custName.includes(r.owner));
-        if (isMyRoute) {
-          totalDelBags += s.qty;
-          if (s.type === 'cash') totalColl += s.total;
+      window.filterSrPanelBySelect = function(val){
+        selectedSrPanelFilter = val;
+        renderAsrDashboard();
+      };
 
-          if (s.cat === 'siment') {
-            const nameL = s.productName.toLowerCase();
-            if (nameL.includes('prime')) primeBags += s.qty;
-            else if (nameL.includes('special')) specialBags += s.qty;
-            else if (nameL.includes('watershed') || nameL.includes('water')) watershedBags += s.qty;
-            else specialBags += s.qty;
+      window.renderAsrDashboard = function(){
+        const dd = document.getElementById('sr-panel-filter-select');
+        const sc = document.getElementById('sr-panel-slots-container');
+        if(dd){
+          dd.innerHTML = '<option value="all">সকল SR সামারি</option>' + asrs.map(a => `<option value="${a.name}">${a.name}</option>`).join('');
+          dd.value = selectedSrPanelFilter;
+        }
+        if(sc){
+          sc.innerHTML = `<button class="asr-slot-btn ${selectedSrPanelFilter === 'all' ? 'active' : ''}" onclick="filterSrPanelBySelect('all')">সকল SR সামারি</button>`;
+          asrs.forEach(a => { sc.innerHTML += `<button class="asr-slot-btn ${selectedSrPanelFilter === a.name ? 'active' : ''}" onclick="filterSrPanelBySelect('${a.name}')">${a.name}</button>`; });
+        }
+        let actName = selectedSrPanelFilter;
+        document.getElementById('asr-logged-name').innerText = actName === 'all' ? 'সকল SR সামারি' : actName;
+        let lRet = actName !== 'all' ? retailers.filter(r => r.sr && r.sr.toLowerCase() === actName.toLowerCase()) : retailers;
+        let totalDel = 0, totalColl = 0, pB = 0, sB = 0, wB = 0;
+        sales.forEach(s => {
+          const isMine = (actName === 'all') || (s.asrName && s.asrName.toLowerCase() === actName.toLowerCase()) || lRet.some(r => s.custName.includes(r.shop) || s.custName.includes(r.owner));
+          if(isMine){
+            totalDel += s.qty;
+            if(s.type === 'cash') totalColl += s.total;
+            if(s.cat === 'siment'){
+              const nl = s.productName.toLowerCase();
+              if(nl.includes('prime')) pB += s.qty;
+              else if(nl.includes('special')) sB += s.qty;
+              else if(nl.includes('water')) wB += s.qty;
+              else sB += s.qty;
+            }
           }
-        }
-      });
-
-      duePayments.forEach(p => {
-        if (activeSrName === 'all' || linkedRet.some(r => p.custName.includes(r.shop) || p.custName.includes(r.owner))) {
-          totalColl += p.amount;
-        }
-      });
-
-      document.getElementById('asr-p-today-del').innerText = `${totalDelBags} ব্যাগ/কেজি`;
-      document.getElementById('asr-p-today-coll').innerText = `৳ ${totalColl.toLocaleString('bn-BD')}`;
-
-      document.getElementById('sr-brand-prime').innerText = `${primeBags} ব্যাগ`;
-      document.getElementById('sr-brand-special').innerText = `${specialBags} ব্যাগ`;
-      document.getElementById('sr-brand-watershed').innerText = `${watershedBags} ব্যাগ`;
-    }
-
-    document.getElementById('sir-deo-form').onsubmit = function(e) {
-      e.preventDefault();
-      const dateInput = document.getElementById('sir-deo-date');
-      const date = dateInput.value;
-      const type = document.getElementById('sir-deo-type').value;
-      const prime = parseFloat(document.getElementById('sir-deo-prime').value) || 0;
-      const special = parseFloat(document.getElementById('sir-deo-special').value) || 0;
-      const watershed = parseFloat(document.getElementById('sir-deo-watershed').value) || 0;
-      const freightAmt = parseFloat(document.getElementById('sir-deo-freight').value) || 0;
-      const bearer = document.getElementById('sir-deo-bearer').value;
-
-      if (prime === 0 && special === 0 && watershed === 0) {
-        return showCustomAlert('অনুগ্রহ করে অন্তত যেকোনো একটি সিমেন্টের পরিমাণ লিখুন!');
-      }
-
-      deos.push({
-        id: 'DEO' + Date.now(),
-        date: date,
-        type: type,
-        prime: prime,
-        special: special,
-        watershed: watershed,
-        totalBags: (prime + special + watershed),
-        freightAmount: freightAmt,
-        bearer: bearer
-      });
-
-      saveData();
-      renderAll();
-      this.reset();
-      dateInput.value = date;
-      showCustomAlert('Sir Panel: নতুন DEO সফলভাবে সংরক্ষণ করা হয়েছে!');
-    };
-
-    function renderSirPanel() {
-      let totalBank = bankTx.reduce((acc, c) => acc + c.amount, 0);
-      let marketDeoBags = 0, companyDeoBags = 0;
-
-      deos.forEach(d => {
-        if (d.type === 'market') marketDeoBags += d.totalBags;
-        else companyDeoBags += d.totalBags;
-      });
-
-      document.getElementById('sir-total-bank').innerText = `৳ ${totalBank.toLocaleString('bn-BD')}`;
-      document.getElementById('sir-market-deo').innerText = `${marketDeoBags.toLocaleString('bn-BD')} ব্যাগ`;
-      document.getElementById('sir-company-deo').innerText = `${companyDeoBags.toLocaleString('bn-BD')} ব্যাগ`;
-
-      const from = document.getElementById('sir-filter-from')?.value;
-      const to = document.getElementById('sir-filter-to')?.value;
-
-      let filtered = deos;
-      if (from && to) {
-        filtered = deos.filter(d => d.date >= from && d.date <= to);
-      }
-
-      const tbody = document.getElementById('sir-deo-table-body');
-      tbody.innerHTML = '';
-
-      filtered.slice().reverse().forEach(d => {
-        const typeBadge = d.type === 'market' ? '<span class="badge-cash">Market</span>' : '<span class="badge-due">Company</span>';
-        tbody.innerHTML += `
-          <tr>
-            <td><strong>${d.date}</strong></td>
-            <td>${typeBadge}</td>
-            <td><small>Prime: ${d.prime}, Special: ${d.special}, Watershed: ${d.watershed}</small></td>
-            <td><strong>${d.totalBags} ব্যাগ</strong></td>
-            <td>৳ ${d.freightAmount || 0}</td>
-            <td>
-              <button class="btn-sm btn-info" onclick="openEditDeoModal('${d.id}')"><i class="fa-solid fa-pen-to-square"></i> এডিট</button>
-            </td>
-          </tr>
-        `;
-      });
-    }
-
-    function resetSirDeoFilter() {
-      document.getElementById('sir-filter-from').value = '';
-      document.getElementById('sir-filter-to').value = '';
-      renderSirPanel();
-    }
-
-    function openEditDeoModal(id) {
-      const d = deos.find(x => x.id === id);
-      if(!d) return;
-
-      document.getElementById('edit-deo-id').value = d.id;
-      document.getElementById('edit-deo-date').value = d.date;
-      document.getElementById('edit-deo-prime').value = d.prime;
-      document.getElementById('edit-deo-special').value = d.special;
-      document.getElementById('edit-deo-watershed').value = d.watershed;
-      document.getElementById('edit-deo-freight').value = d.freightAmount || 0;
-
-      document.getElementById('edit-deo-modal').style.display = 'flex';
-    }
-
-    function closeEditDeoModal() {
-      document.getElementById('edit-deo-modal').style.display = 'none';
-    }
-
-    document.getElementById('edit-deo-form').onsubmit = function(e) {
-      e.preventDefault();
-      const id = document.getElementById('edit-deo-id').value;
-      const d = deos.find(x => x.id === id);
-
-      if(d) {
-        d.date = document.getElementById('edit-deo-date').value;
-        d.prime = parseFloat(document.getElementById('edit-deo-prime').value) || 0;
-        d.special = parseFloat(document.getElementById('edit-deo-special').value) || 0;
-        d.watershed = parseFloat(document.getElementById('edit-deo-watershed').value) || 0;
-        d.totalBags = d.prime + d.special + d.watershed;
-        d.freightAmount = parseFloat(document.getElementById('edit-deo-freight').value) || 0;
-
-        saveData();
-        renderAll();
-        closeEditDeoModal();
-        showCustomAlert('DEO তথ্য ও তারিখ সফলভাবে পরিবর্তন করা হয়েছে!');
-      }
-    };
-
-    function renderOwnerReport() {
-      const today = new Date().toISOString().split('T')[0];
-      const monthFilter = document.getElementById('global-month-filter').value || today.substring(0, 7);
-
-      let cashToday = 0, dueToday = 0, monthSalesTot = 0;
-      let retailTodayTot = 0, wholesaleTodayTot = 0;
-
-      let tPrime = 0, tSpecial = 0, tWatershed = 0;
-      let mPrime = 0, mSpecial = 0, mWatershed = 0;
-
-      let tRodMap = {}, mRodMap = {};
-
-      sales.forEach(s => {
-        const isRetail = !retailers.some(r => s.custName.includes(r.shop) || s.custName.includes(r.owner));
-
-        if (s.date === today) {
-          if (s.type === 'cash') cashToday += s.total;
-          else dueToday += s.total;
-
-          if (isRetail) retailTodayTot += s.total;
-          else wholesaleTodayTot += s.total;
-
-          if (s.cat === 'siment') {
-            const pNameLower = s.productName.toLowerCase();
-            if (pNameLower.includes('prime')) tPrime += s.qty;
-            else if (pNameLower.includes('special')) tSpecial += s.qty;
-            else if (pNameLower.includes('watershed') || pNameLower.includes('water')) tWatershed += s.qty;
-            else tSpecial += s.qty;
-          } else if (s.cat === 'rod') {
-            tRodMap[s.productName] = (tRodMap[s.productName] || 0) + s.qty;
-          }
-        }
-
-        if (s.date.startsWith(monthFilter)) {
-          monthSalesTot += s.total;
-
-          if (s.cat === 'siment') {
-            const pNameLower = s.productName.toLowerCase();
-            if (pNameLower.includes('prime')) mPrime += s.qty;
-            else if (pNameLower.includes('special')) mSpecial += s.qty;
-            else if (pNameLower.includes('watershed') || pNameLower.includes('water')) mWatershed += s.qty;
-            else mSpecial += s.qty;
-          } else if (s.cat === 'rod') {
-            mRodMap[s.productName] = (mRodMap[s.productName] || 0) + s.qty;
-          }
-        }
-      });
-
-      document.getElementById('owner-today-sales').innerText = `৳ ${(cashToday + dueToday).toLocaleString('bn-BD')}`;
-      document.getElementById('owner-today-cash').innerText = `৳ ${cashToday.toLocaleString('bn-BD')}`;
-      document.getElementById('owner-today-due').innerText = `৳ ${dueToday.toLocaleString('bn-BD')}`;
-      document.getElementById('owner-month-sales').innerText = `৳ ${monthSalesTot.toLocaleString('bn-BD')}`;
-
-      document.getElementById('owner-today-retail').innerText = `৳ ${retailTodayTot.toLocaleString('bn-BD')}`;
-      document.getElementById('owner-today-wholesale').innerText = `৳ ${wholesaleTodayTot.toLocaleString('bn-BD')}`;
-
-      document.getElementById('owner-today-prime').innerText = tPrime.toLocaleString('bn-BD');
-      document.getElementById('owner-today-special').innerText = tSpecial.toLocaleString('bn-BD');
-      document.getElementById('owner-today-watershed').innerText = tWatershed.toLocaleString('bn-BD');
-      document.getElementById('owner-today-cement-tot').innerText = `${(tPrime + tSpecial + tWatershed).toLocaleString('bn-BD')} ব্যাগ`;
-
-      document.getElementById('owner-month-prime').innerText = mPrime.toLocaleString('bn-BD');
-      document.getElementById('owner-month-special').innerText = mSpecial.toLocaleString('bn-BD');
-      document.getElementById('owner-month-watershed').innerText = mWatershed.toLocaleString('bn-BD');
-      document.getElementById('owner-month-cement-tot').innerText = `${(mPrime + mSpecial + mWatershed).toLocaleString('bn-BD')} ব্যাগ`;
-
-      const tRodContainer = document.getElementById('owner-today-rod-details');
-      let tRodKeys = Object.keys(tRodMap);
-      let tRodTot = 0;
-      if (tRodKeys.length === 0) {
-        tRodContainer.innerHTML = '<span style="color:var(--text-gray);">আজ কোনো রড বিক্রি হয়নি</span>';
-      } else {
-        tRodContainer.innerHTML = tRodKeys.map(k => {
-          tRodTot += tRodMap[k];
-          return `${k}: <b style="color:#3730a3;">${tRodMap[k].toLocaleString('bn-BD')}</b> কেজি`;
-        }).join('<br>');
-      }
-      document.getElementById('owner-today-rod-tot').innerText = `${tRodTot.toLocaleString('bn-BD')} কেজি`;
-
-      const mRodContainer = document.getElementById('owner-month-rod-details');
-      let mRodKeys = Object.keys(mRodMap);
-      let mRodTot = 0;
-      if (mRodKeys.length === 0) {
-        mRodContainer.innerHTML = '<span style="color:var(--text-gray);">চলতি মাসে কোনো রড বিক্রি রেকর্ড নেই</span>';
-      } else {
-        mRodContainer.innerHTML = mRodKeys.map(k => {
-          mRodTot += mRodMap[k];
-          return `${k}: <b style="color:#6366f1;">${mRodMap[k].toLocaleString('bn-BD')}</b> কেজি`;
-        }).join('<br>');
-      }
-      document.getElementById('owner-month-rod-tot').innerText = `${mRodTot.toLocaleString('bn-BD')} কেজি`;
-
-      let asrTodayColl = 0;
-      duePayments.forEach(dp => { if (dp.date === today) asrTodayColl += dp.amount; });
-      sales.forEach(s => { if (s.type === 'cash' && s.total > 0 && s.date === today) asrTodayColl += s.total; });
-      document.getElementById('owner-today-asr').innerText = `৳ ${asrTodayColl.toLocaleString('bn-BD')}`;
-
-      let expToday = expenses.filter(e => e.date === today).reduce((acc, c) => acc + c.amount, 0);
-      document.getElementById('owner-today-exp').innerText = `৳ ${expToday.toLocaleString('bn-BD')}`;
-
-      let bankToday = bankTx.filter(t => t.date === today).reduce((acc, c) => acc + c.amount, 0);
-      let bankMonth = bankTx.filter(t => t.date.startsWith(monthFilter)).reduce((acc, c) => acc + c.amount, 0);
-      document.getElementById('owner-today-bank').innerText = `৳ ${bankToday.toLocaleString('bn-BD')}`;
-      document.getElementById('owner-month-bank').innerText = `৳ ${bankMonth.toLocaleString('bn-BD')}`;
-
-      let deoMarket = 0, deoCompany = 0;
-      deos.filter(d => d.date.startsWith(monthFilter)).forEach(d => {
-        if (d.type === 'market') deoMarket += d.totalBags;
-        else deoCompany += d.totalBags;
-      });
-      document.getElementById('owner-deo-market').innerText = `${deoMarket.toLocaleString('bn-BD')} ব্যাগ`;
-      document.getElementById('owner-deo-company').innerText = `${deoCompany.toLocaleString('bn-BD')} ব্যাগ`;
-      document.getElementById('owner-deo-total').innerText = `${(deoMarket + deoCompany).toLocaleString('bn-BD')} ব্যাগ`;
-    }
-
-    function switchTab(tabId, btn) {
-      document.querySelectorAll('.section-tab').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.nav-menu button').forEach(el => el.classList.remove('active'));
-      
-      document.getElementById(tabId).classList.add('active');
-      if (btn && btn.tagName === 'BUTTON') btn.classList.add('active');
-    }
-
-    function toggleDropdown() {
-      const dropdown = document.getElementById('reportDropdown');
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    }
-
-    function renderDashboard() {
-      const today = new Date().toISOString().split('T')[0];
-
-      let cashSellToday = 0, dueSellToday = 0;
-      sales.forEach(s => {
-        if (s.date === today) {
-          if (s.type === 'cash') cashSellToday += s.total;
-          else dueSellToday += s.total;
-        }
-      });
-      document.getElementById('dash-cash-sell').innerText = `৳ ${(cashSellToday + dueSellToday).toLocaleString('bn-BD')}`;
-      document.getElementById('dash-cash-only').innerText = `৳ ${cashSellToday.toLocaleString('bn-BD')}`;
-      document.getElementById('dash-due-only').innerText = `৳ ${dueSellToday.toLocaleString('bn-BD')}`;
-
-      let buyTodayAmt = 0;
-      let buyTodayItems = {};
-      purchases.filter(p => p.date === today).forEach(p => {
-        buyTodayAmt += (p.total || 0);
-        if (!buyTodayItems[p.productName]) {
-          buyTodayItems[p.productName] = { qty: 0, cat: p.cat };
-        }
-        buyTodayItems[p.productName].qty += p.qty;
-      });
-
-      let buyItemsStr = Object.keys(buyTodayItems).map(pName => {
-        const unit = buyTodayItems[pName].cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-        return `${pName}: <b>${buyTodayItems[pName].qty}</b> ${unit}`;
-      }).join(', ');
-
-      document.getElementById('dash-today-buy').innerText = `৳ ${buyTodayAmt.toLocaleString('bn-BD')}`;
-      document.getElementById('dash-today-buy-items').innerHTML = buyItemsStr || 'আজ কোনো ক্রয় নেই';
-
-      const stockGrid = document.getElementById('dash-stock-summary');
-      stockGrid.innerHTML = '';
-      
-      const filteredP = products.filter(p => selectedDashStockIds.includes(p.id));
-
-      if (filteredP.length === 0) {
-        stockGrid.innerHTML = '<div style="color:var(--text-gray); font-size:0.9rem;">কোনো প্রোডাক্ট সিলেক্ট করা নেই। প্লাস বাটন থেকে সিলেক্ট করুন।</div>';
-      } else {
-        filteredP.slice().reverse().forEach(p => {
-          const unit = p.cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-          const badgeClass = p.cat === 'rod' ? 'badge-rod' : 'badge-cement';
-          const stockColor = p.stock > 0 ? 'var(--green)' : 'var(--red)';
-
-          stockGrid.innerHTML += `
-            <div class="stock-pill">
-              <div>
-                <span class="${badgeClass}">${p.cat === 'rod' ? 'রড' : 'সিমেন্ট'}</span>
-                <div style="font-weight:700; margin-top:4px; font-size:0.95rem;">${p.name}</div>
-              </div>
-              <div style="text-align:right;">
-                <div style="font-size:1.15rem; font-weight:800; color:${stockColor};">${p.stock}</div>
-                <small style="color:var(--text-gray);">${unit}</small>
-              </div>
-            </div>
-          `;
         });
-      }
+        duePayments.forEach(p => {
+          if(actName === 'all' || lRet.some(r => p.custName.includes(r.shop) || p.custName.includes(r.owner))) totalColl += p.amount;
+        });
+        document.getElementById('asr-p-today-del').innerText = `${totalDel} ব্যাগ/কেজি`;
+        document.getElementById('asr-p-today-coll').innerText = `৳ ${totalColl.toLocaleString('bn-BD')}`;
+        document.getElementById('sr-brand-prime').innerText = `${pB} ব্যাগ`;
+        document.getElementById('sr-brand-special').innerText = `${sB} ব্যাগ`;
+        document.getElementById('sr-brand-watershed').innerText = `${wB} ব্যাগ`;
+      };
 
-      let asrTodayColl = 0, asrTotalColl = 0;
-      duePayments.forEach(dp => {
-        if (dp.date === today) asrTodayColl += dp.amount;
-        asrTotalColl += dp.amount;
-      });
-      sales.forEach(s => {
-        if (s.type === 'cash' && s.total > 0) {
-          if (s.date === today) asrTodayColl += s.total;
-          asrTotalColl += s.total;
-        }
-      });
-      document.getElementById('dash-asr-today-coll').innerText = `৳ ${asrTodayColl.toLocaleString('bn-BD')}`;
-      document.getElementById('dash-asr-total-coll').innerText = `৳ ${asrTotalColl.toLocaleString('bn-BD')}`;
-
-      let bankToday = bankTx.filter(t => t.date === today).reduce((acc, curr) => acc + curr.amount, 0);
-      document.getElementById('dash-bank-today').innerText = `৳ ${bankToday.toLocaleString('bn-BD')}`;
-
-      let expenseToday = expenses.filter(e => e.date === today).reduce((acc, curr) => acc + curr.amount, 0);
-      document.getElementById('dash-expense-today').innerText = `৳ ${expenseToday.toLocaleString('bn-BD')}`;
-
-      let totalDueAll = Object.values(dues).reduce((acc, curr) => acc + curr, 0);
-      document.getElementById('dash-total-due-all').innerText = `৳ ${totalDueAll.toLocaleString('bn-BD')}`;
-    }
-
-    function openStockSelectModal() {
-      const container = document.getElementById('stock-checkbox-list');
-      container.innerHTML = '';
-
-      products.forEach(p => {
-        const isChecked = selectedDashStockIds.includes(p.id) ? 'checked' : '';
-        container.innerHTML += `
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
-            <input type="checkbox" id="chk_${p.id}" value="${p.id}" ${isChecked} style="width:18px; height:18px; cursor:pointer;">
-            <label for="chk_${p.id}" style="font-size:0.95rem; font-weight:600; cursor:pointer;">${p.name} (${p.cat === 'siment' ? 'সিমেন্ট' : 'রড'})</label>
-          </div>
-        `;
-      });
-
-      document.getElementById('stock-select-modal').style.display = 'flex';
-    }
-
-    function closeStockSelectModal() {
-      document.getElementById('stock-select-modal').style.display = 'none';
-    }
-
-    document.getElementById('stock-select-form').onsubmit = function(e) {
-      e.preventDefault();
-      selectedDashStockIds = [];
-      products.forEach(p => {
-        const chk = document.getElementById(`chk_${p.id}`);
-        if (chk && chk.checked) {
-          selectedDashStockIds.push(p.id);
-        }
-      });
-
-      saveData();
-      renderDashboard();
-      closeStockSelectModal();
-      showCustomAlert('ড্যাশবোর্ড স্টক লিস্ট কাস্টমাইজেশন সেভ হয়েছে!');
-    };
-
-    function populateDropdowns() {
-      const saleSelect = document.getElementById('sale-product');
-      const buySelect = document.getElementById('buy-product-select');
-      const retSrSelect = document.getElementById('ret-sr');
-      const retSrModalSelect = document.getElementById('ret-sr-m');
-      const editRetSrSelect = document.getElementById('edit-ret-sr');
-      const bankSelect = document.getElementById('bank-select');
-      const editBankSelect = document.getElementById('edit-bank-select');
-      const custSelect = document.getElementById('cust-select');
-      const compSelect = document.getElementById('buy-company-select');
-      const expCatSelect = document.getElementById('exp-cat-select');
-      const expRptCatSelect = document.getElementById('exp-rpt-cat');
-      const asrFilterSelect = document.getElementById('asr-filter-select');
-      const filterRetailerSr = document.getElementById('filter-retailer-sr');
-
-      saleSelect.innerHTML = '<option value="">পণ্য বেছে নিন</option>';
-      buySelect.innerHTML = '<option value="">পণ্য বেছে নিন</option>';
-      
-      products.forEach(p => {
-        saleSelect.innerHTML += `<option value="${p.id}">${p.name} (${p.cat === 'siment' ? 'সিমেন্ট' : 'রড'})</option>`;
-        buySelect.innerHTML += `<option value="${p.id}">${p.name}</option>`;
-      });
-
-      const asrOpts = '<option value="">ASR বেছে নিন</option>' + asrs.map(a => `<option value="${a.name}">${a.name} (${a.area})</option>`).join('');
-      if(retSrSelect) retSrSelect.innerHTML = asrOpts;
-      if(retSrModalSelect) retSrModalSelect.innerHTML = asrOpts;
-      if(editRetSrSelect) editRetSrSelect.innerHTML = asrOpts;
-
-      if(filterRetailerSr) {
-        filterRetailerSr.innerHTML = '<option value="all">সব ASR</option>' + asrs.map(a => `<option value="${a.name}">${a.name}</option>`).join('');
-      }
-
-      if(asrFilterSelect) {
-        asrFilterSelect.innerHTML = '<option value="all">সব ASR দেখুন</option>' + asrs.map(a => `<option value="${a.name}">${a.name}</option>`).join('');
-        asrFilterSelect.value = selectedAsrFilter;
-      }
-
-      bankSelect.innerHTML = '<option value="">ব্যাংক নির্বাচন করুন</option>';
-      editBankSelect.innerHTML = '<option value="">ব্যাংক নির্বাচন করুন</option>';
-      banks.forEach(b => {
-        const optionStr = `<option value="${b.name}">${b.name} (${b.accNo || 'মাঠ অ্যাকাউন্ট'})</option>`;
-        bankSelect.innerHTML += optionStr;
-        editBankSelect.innerHTML += optionStr;
-      });
-
-      custSelect.innerHTML = '<option value="">নতুন কাস্টমার টাইপ করুন...</option>';
-      retailers.forEach(r => {
-        const partyTag = (r.partyType === 'block') ? ' [Block Party]' : '';
-        custSelect.innerHTML += `<option value="${r.id}">${r.shop} - ${r.owner} (${r.sr || 'No ASR'})${partyTag}</option>`;
-      });
-
-      compSelect.innerHTML = '<option value="">কোম্পানি নির্বাচন করুন</option>';
-      companies.forEach(c => {
-        compSelect.innerHTML += `<option value="${c.name}">${c.name}</option>`;
-      });
-
-      let expCatOptions = '<option value="">খাত বেছে নিন</option>';
-      let expRptOptions = '<option value="">সব খাত দেখুন</option>';
-      expCategories.forEach(c => {
-        expCatOptions += `<option value="${c}">${c}</option>`;
-        expRptOptions += `<option value="${c}">${c}</option>`;
-      });
-      if(expCatSelect) expCatSelect.innerHTML = expCatOptions;
-      if(expRptCatSelect) expRptCatSelect.innerHTML = expRptOptions;
-    }
-
-    function onCustomerSelectChange() {
-      const cid = document.getElementById('cust-select').value;
-      const r = retailers.find(x => x.id === cid);
-      if (r) {
-        document.getElementById('cust-name').value = r.shop + ' (' + r.owner + ')';
-        document.getElementById('cust-phone').value = r.phone;
-      }
-    }
-
-    document.getElementById('add-product-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const pCat = document.getElementById('new-p-cat').value;
-      const pName = document.getElementById('new-p-name').value.trim();
-      const pCost = parseFloat(document.getElementById('new-p-cost').value) || 0;
-      const pPrice = parseFloat(document.getElementById('new-p-price').value) || 0;
-      const pStock = parseFloat(document.getElementById('new-p-stock').value) || 0;
-
-      if (pName) {
-        const newP = {
-          id: 'P' + Date.now(),
-          cat: pCat,
-          name: pName,
-          cost: pCost,
-          price: pPrice,
-          stock: pStock
-        };
-        products.push(newP);
-        selectedDashStockIds.push(newP.id);
+      document.getElementById('sir-deo-form').onsubmit = function(e){
+        e.preventDefault();
+        const dIn = document.getElementById('sir-deo-date');
+        const dt = dIn.value, ty = document.getElementById('sir-deo-type').value;
+        const pr = parseFloat(document.getElementById('sir-deo-prime').value) || 0;
+        const sp = parseFloat(document.getElementById('sir-deo-special').value) || 0;
+        const ws = parseFloat(document.getElementById('sir-deo-watershed').value) || 0;
+        const fr = parseFloat(document.getElementById('sir-deo-freight').value) || 0;
+        const br = document.getElementById('sir-deo-bearer').value;
+        if(pr === 0 && sp === 0 && ws === 0) return showCustomAlert('সিমেন্টের পরিমাণ লিখুন!');
+        deos.push({ id: 'DEO' + Date.now(), date: dt, type: ty, prime: pr, special: sp, watershed: ws, totalBags: (pr + sp + ws), freightAmount: fr, bearer: br });
         saveData();
         renderAll();
         this.reset();
-        showCustomAlert('পণ্য ম্যানেজমেন্ট: নতুন পণ্য সফলভাবে যুক্ত হয়েছে!');
-      }
-    });
-
-    function renderProductMgmt() {
-      const tbody = document.getElementById('product-mgmt-table');
-      tbody.innerHTML = '';
-      if(products.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; color:var(--text-gray);">কোনো পণ্য সংরক্ষিত নেই। উপরের ফর্ম থেকে পণ্য যোগ করুন।</td></tr>';
-        return;
-      }
-
-      products.slice().reverse().forEach(p => {
-        const unit = p.cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-        tbody.innerHTML += `
-          <tr>
-            <td><span class="${p.cat === 'rod' ? 'badge-rod' : 'badge-cement'}">${p.cat === 'rod' ? 'রড' : 'সিমেন্ট'}</span></td>
-            <td><strong>${p.name}</strong></td>
-            <td>৳ ${p.cost}</td>
-            <td>৳ ${p.price}</td>
-            <td><strong style="color:var(--green);">${p.stock} ${unit}</strong></td>
-            <td>
-              <button class="btn-sm btn-info edit-elem" onclick="openEditProductModal('${p.id}')"><i class="fa-solid fa-pen-to-square"></i> এডিট</button>
-            </td>
-          </tr>
-        `;
-      });
-    }
-
-    function openEditProductModal(id) {
-      const p = products.find(x => x.id === id);
-      if (!p) return;
-
-      document.getElementById('edit-p-id').value = p.id;
-      document.getElementById('edit-p-cat').value = p.cat;
-      document.getElementById('edit-p-name').value = p.name;
-      document.getElementById('edit-p-cost').value = p.cost;
-      document.getElementById('edit-p-price').value = p.price;
-      document.getElementById('edit-p-stock').value = p.stock;
-
-      document.getElementById('edit-product-modal').style.display = 'flex';
-    }
-
-    function closeEditProductModal() {
-      document.getElementById('edit-product-modal').style.display = 'none';
-      document.getElementById('edit-product-form').reset();
-    }
-
-    document.getElementById('edit-product-form').onsubmit = function(e) {
-      e.preventDefault();
-      const id = document.getElementById('edit-p-id').value;
-      const p = products.find(x => x.id === id);
-
-      if (p) {
-        p.cat = document.getElementById('edit-p-cat').value;
-        p.name = document.getElementById('edit-p-name').value;
-        p.cost = parseFloat(document.getElementById('edit-p-cost').value) || 0;
-        p.price = parseFloat(document.getElementById('edit-p-price').value) || 0;
-        p.stock = parseFloat(document.getElementById('edit-p-stock').value) || 0;
-
-        saveData();
-        renderAll();
-        closeEditProductModal();
-        showCustomAlert('পণ্য ম্যানেজমেন্ট: পণ্য তথ্য সফলভাবে আপডেট হয়েছে!');
-      }
-    };
-
-    function toggleDeoFreightOption() {
-      const type = document.getElementById('deo-type').value;
-      const freightBox = document.getElementById('deo-freight-container');
-      freightBox.style.display = (type === 'market') ? 'grid' : 'none';
-    }
-
-    document.getElementById('deo-form').onsubmit = function(e) {
-      e.preventDefault();
-      const dateInput = document.getElementById('deo-date');
-      const date = dateInput.value;
-      const type = document.getElementById('deo-type').value;
-      const prime = parseFloat(document.getElementById('deo-prime').value) || 0;
-      const special = parseFloat(document.getElementById('deo-special').value) || 0;
-      const watershed = parseFloat(document.getElementById('deo-watershed').value) || 0;
-      const freightAmt = type === 'market' ? (parseFloat(document.getElementById('deo-freight-amount').value) || 0) : 0;
-      const bearer = type === 'market' ? document.getElementById('deo-freight-bearer').value : 'none';
-
-      if (prime === 0 && special === 0 && watershed === 0) {
-        return showCustomAlert('অনুগ্রহ করে অন্তত যেকোনো একটি সিমেন্টের পরিমাণ লিখুন!');
-      }
-
-      deos.push({
-        id: 'DEO' + Date.now(),
-        date: date,
-        type: type,
-        prime: prime,
-        special: special,
-        watershed: watershed,
-        totalBags: (prime + special + watershed),
-        freightAmount: freightAmt,
-        bearer: bearer
-      });
-
-      saveData();
-      renderAll();
-      this.reset();
-      dateInput.value = date;
-      showCustomAlert('DEO সেকশন: নতুন DEO সফলভাবে সংরক্ষণ করা হয়েছে!');
-    };
-
-    function renderDeoSection() {
-      const from = document.getElementById('deo-rpt-from')?.value;
-      const to = document.getElementById('deo-rpt-to')?.value;
-      const monthFilter = document.getElementById('global-month-filter').value;
-
-      let totMarket = 0, totCompany = 0;
-      const tbody = document.getElementById('deo-table-body');
-      tbody.innerHTML = '';
-
-      let filtered = deos;
-      if (from && to) {
-        filtered = deos.filter(d => d.date >= from && d.date <= to);
-      } else if (monthFilter) {
-        filtered = deos.filter(d => d.date.startsWith(monthFilter));
-      }
-
-      filtered.slice().reverse().forEach(d => {
-        if (d.type === 'market') totMarket += d.totalBags;
-        else totCompany += d.totalBags;
-
-        const typeBadge = d.type === 'market' ? '<span class="badge-cash">Market</span>' : '<span class="badge-due">Company</span>';
-        let freightStr = '--';
-        if (d.type === 'market') {
-          freightStr = `৳ ${d.freightAmount.toLocaleString('bn-BD')} (${d.bearer === 'company' ? 'কোম্পানি' : 'অন্যান্য'})`;
-        }
-
-        tbody.innerHTML += `
-          <tr>
-            <td><strong>${d.date}</strong></td>
-            <td>${typeBadge}</td>
-            <td>
-              <small>
-                Prime: <b>${d.prime}</b> ব্যাগ, Special: <b>${d.special}</b> ব্যাগ, Watershed: <b>${d.watershed}</b> ব্যাগ<br>
-                <b>মোট: ${d.totalBags} ব্যাগ</b>
-              </small>
-            </td>
-            <td>${freightStr}</td>
-            <td>
-              <button class="btn-sm btn-info" onclick="openEditDeoModal('${d.id}')"><i class="fa-solid fa-pen-to-square"></i> এডিট</button>
-            </td>
-          </tr>
-        `;
-      });
-
-      const totAll = totMarket + totCompany;
-      const diff = Math.abs(totMarket - totCompany);
-
-      document.getElementById('deo-total-market').innerText = `${totMarket.toLocaleString('bn-BD')} ব্যাগ`;
-      document.getElementById('deo-total-company').innerText = `${totCompany.toLocaleString('bn-BD')} ব্যাগ`;
-      document.getElementById('deo-total-all').innerText = `${totAll.toLocaleString('bn-BD')} ব্যাগ`;
-      document.getElementById('deo-diff-total').innerText = `${diff.toLocaleString('bn-BD')} ব্যাগ`;
-    }
-
-    function resetDeoFilter() {
-      document.getElementById('deo-rpt-from').value = '';
-      document.getElementById('deo-rpt-to').value = '';
-      renderDeoSection();
-    }
-
-    function openSaleWindow(mode) {
-      const win = document.getElementById('sale-form-window');
-      win.classList.add('active');
-      document.getElementById('current-sale-mode').value = mode;
-      const badge = document.getElementById('mode-badge');
-      
-      if (mode === 'cash') {
-        win.classList.add('cash-theme');
-        win.classList.remove('due-theme');
-        badge.innerText = 'নগদ বিক্রি (Cash Mode)';
-        badge.className = 'badge-cash';
-      } else {
-        win.classList.add('due-theme');
-        win.classList.remove('cash-theme');
-        badge.innerText = 'বাকি বিক্রি (Due Mode)';
-        badge.className = 'badge-due';
-      }
-    }
-
-    function closeSaleWindow() {
-      const win = document.getElementById('sale-form-window');
-      win.classList.remove('active');
-      win.classList.remove('due-theme');
-      win.classList.remove('cash-theme');
-      document.getElementById('sell-action-form').reset();
-      document.getElementById('live-stock-box').style.display = 'none';
-      document.getElementById('display-total-price').innerText = '0';
-    }
-
-    function onProductSelect() {
-      const pid = document.getElementById('sale-product').value;
-      const p = products.find(x => x.id === pid);
-      const stockBox = document.getElementById('live-stock-box');
-      if (p) {
-        const unit = p.cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-        document.getElementById('live-stock-count').innerText = `${p.stock} ${unit}`;
-        document.getElementById('live-product-price').innerText = p.price;
-        document.getElementById('sale-rate').value = p.price;
-        stockBox.style.display = 'block';
-        calculateTotalCost();
-      } else {
-        stockBox.style.display = 'none';
-      }
-    }
-
-    function calculateTotalCost() {
-      const qty = parseFloat(document.getElementById('sale-qty').value) || 0;
-      const rate = parseFloat(document.getElementById('sale-rate').value) || 0;
-      document.getElementById('display-total-price').innerText = (qty * rate).toFixed(2);
-    }
-
-    document.getElementById('sell-action-form').onsubmit = function(e) {
-      e.preventDefault();
-      const mode = document.getElementById('current-sale-mode').value;
-      const pid = document.getElementById('sale-product').value;
-      const p = products.find(x => x.id === pid);
-      const qty = parseFloat(document.getElementById('sale-qty').value);
-      const rate = parseFloat(document.getElementById('sale-rate').value);
-      const total = qty * rate;
-      let custName = document.getElementById('cust-name').value.trim();
-      const custPhone = document.getElementById('cust-phone').value.trim();
-      const cid = document.getElementById('cust-select').value;
-      const today = new Date().toISOString().split('T')[0];
-
-      if (!p) {
-        showCustomAlert('অনুগ্রহ করে একটি পণ্য সিলেক্ট করুন!');
-        return;
-      }
-
-      if (p.stock < qty) {
-        showCustomAlert('পর্যাপ্ত স্টক নেই!');
-        return;
-      }
-
-      p.stock -= qty;
-
-      let linkedAsr = 'নগদ/সরাসরি';
-      const matchedRet = retailers.find(r => r.id === cid || r.shop === custName || custName.includes(r.shop));
-      if (matchedRet) {
-        linkedAsr = matchedRet.sr || 'নগদ/সরাসরি';
-        if (p.cat === 'siment') matchedRet.cementQty = (matchedRet.cementQty || 0) + qty;
-        else matchedRet.rodQty = (matchedRet.rodQty || 0) + qty;
-        if (mode === 'cash') matchedRet.totalAmount = (matchedRet.totalAmount || 0) + total;
-      }
-
-      const saleEntry = {
-        id: 'S' + Date.now(),
-        date: today,
-        time: new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }),
-        type: mode,
-        custName: custName,
-        custPhone: custPhone,
-        productId: pid,
-        productName: p.name,
-        cat: p.cat,
-        qty: qty,
-        rate: rate,
-        total: total,
-        asrName: linkedAsr
+        dIn.value = dt;
+        showCustomAlert('DEO সংরক্ষণ হয়েছে!');
       };
 
-      sales.push(saleEntry);
+      window.renderSirPanel = function(){
+        let totB = bankTx.reduce((a, c) => a + c.amount, 0), mD = 0, cD = 0;
+        deos.forEach(d => { if(d.type === 'market') mD += d.totalBags; else cD += d.totalBags; });
+        document.getElementById('sir-total-bank').innerText = `৳ ${totB.toLocaleString('bn-BD')}`;
+        document.getElementById('sir-market-deo').innerText = `${mD.toLocaleString('bn-BD')} ব্যাগ`;
+        document.getElementById('sir-company-deo').innerText = `${cD.toLocaleString('bn-BD')} ব্যাগ`;
 
-      if (mode === 'due') {
-        dues[custName] = (dues[custName] || 0) + total;
-      }
-
-      saveData();
-      renderAll();
-      closeSaleWindow();
-      openSellSuccessModal(saleEntry);
-    };
-
-    function openSellSuccessModal(s) {
-      const unit = s.cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-      document.getElementById('pop-cust').innerText = s.custName;
-      document.getElementById('pop-item').innerText = s.productName;
-      document.getElementById('pop-qty').innerText = s.qty + ' ' + unit;
-      document.getElementById('pop-total').innerText = '৳ ' + s.total.toFixed(2);
-      
-      const typeBadge = document.getElementById('pop-type');
-      typeBadge.innerText = s.type === 'cash' ? 'নগদ বিক্রি' : 'বাকি বিক্রি';
-      typeBadge.className = s.type === 'cash' ? 'badge-cash' : 'badge-due';
-
-      document.getElementById('pop-print-btn').onclick = function() {
-        printSaleInvoice(s.id);
-      };
-
-      document.getElementById('sell-success-modal').style.display = 'flex';
-    }
-
-    function closeSellSuccessModal() {
-      document.getElementById('sell-success-modal').style.display = 'none';
-    }
-
-    function printSaleInvoice(sId) {
-      const s = sales.find(x => x.id === sId);
-      if(!s) return;
-
-      document.getElementById('p-cust').innerText = s.custName;
-      document.getElementById('p-phone').innerText = s.custPhone || 'N/A';
-      document.getElementById('p-date').innerText = s.date + ' (' + s.time + ')';
-      document.getElementById('p-type').innerText = s.type === 'cash' ? 'নগদ বিক্রি' : 'বাকি বিক্রি';
-      document.getElementById('p-item').innerText = s.productName;
-      document.getElementById('p-qty').innerText = s.qty + ' ' + (s.cat === 'siment' ? 'ব্যাগ' : 'কেজি');
-      document.getElementById('p-rate').innerText = s.rate;
-      document.getElementById('p-total').innerText = s.total.toFixed(2);
-
-      const area = document.getElementById('print-area');
-      area.style.display = 'block';
-      window.print();
-      area.style.display = 'none';
-    }
-
-    function renderDailySales() {
-      const from = document.getElementById('sell-log-from').value;
-      const to = document.getElementById('sell-log-to').value;
-      const today = new Date().toISOString().split('T')[0];
-      const tbody = document.getElementById('daily-current-sales-table-body');
-      tbody.innerHTML = '';
-      
-      let filtered = sales;
-      if (from && to) {
-        filtered = sales.filter(s => s.date >= from && s.date <= to);
-      } else {
-        filtered = sales.filter(s => s.date === today);
-      }
-
-      filtered.slice().reverse().forEach(s => {
-        const unit = s.cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-        tbody.innerHTML += `
-          <tr>
-            <td>${s.date}<br><small style="color:var(--text-gray);">${s.time}</small></td>
-            <td><span class="${s.type === 'cash' ? 'badge-cash' : 'badge-due'}">${s.type === 'cash' ? 'নগদ' : 'বাকি'}</span></td>
-            <td><strong>${s.custName}</strong><br><small style="color:var(--primary);">ASR: ${s.asrName || 'N/A'}</small></td>
-            <td>${s.productName}</td>
-            <td>${s.qty} ${unit}</td>
-            <td>৳ ${s.rate}</td>
-            <td><strong>৳ ${s.total.toFixed(2)}</strong></td>
-            <td>
-              <button class="btn-sm btn-info" onclick="printSaleInvoice('${s.id}')"><i class="fa-solid fa-print"></i> চালানের প্রিন্ট</button>
-            </td>
-          </tr>
-        `;
-      });
-    }
-
-    function resetSellLogFilter() {
-      document.getElementById('sell-log-from').value = '';
-      document.getElementById('sell-log-to').value = '';
-      renderDailySales();
-    }
-
-    function openAddCompanyModal() {
-      document.getElementById('add-company-modal').style.display = 'flex';
-    }
-
-    function closeAddCompanyModal() {
-      document.getElementById('add-company-modal').style.display = 'none';
-      document.getElementById('add-company-form').reset();
-    }
-
-    document.getElementById('add-company-form').onsubmit = function(e) {
-      e.preventDefault();
-      const compName = document.getElementById('new-comp-name').value;
-      const compPhone = document.getElementById('new-comp-phone').value;
-      const compAddress = document.getElementById('new-comp-address').value;
-
-      companies.push({ id: 'C' + Date.now(), name: compName, phone: compPhone, address: compAddress });
-      saveData();
-      renderAll();
-      closeAddCompanyModal();
-      showCustomAlert('পণ্য ক্রয়: নতুন কোম্পানি সফলভাবে যুক্ত হয়েছে!');
-    };
-
-    function renderCompanies() {
-      const tbody = document.getElementById('company-list-table');
-      tbody.innerHTML = '';
-      companies.slice().reverse().forEach(c => {
-        tbody.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.phone || '--'}</td><td>${c.address || '--'}</td></tr>`;
-      });
-    }
-
-    function onBuyProductSelect() {
-      const pid = document.getElementById('buy-product-select').value;
-      const p = products.find(x => x.id === pid);
-      if (p) {
-        document.getElementById('buy-cost').value = p.cost;
-      }
-    }
-
-    document.getElementById('buy-form').onsubmit = function(e) {
-      e.preventDefault();
-      const compName = document.getElementById('buy-company-select').value;
-      const payType = document.getElementById('buy-payment-type').value;
-      const pid = document.getElementById('buy-product-select').value;
-      const p = products.find(x => x.id === pid);
-      const qty = parseFloat(document.getElementById('buy-qty').value);
-      const cost = parseFloat(document.getElementById('buy-cost').value);
-      const today = new Date().toISOString().split('T')[0];
-
-      if(!p) {
-        showCustomAlert('পণ্য সঠিক নয়!');
-        return;
-      }
-
-      p.stock += qty;
-      p.cost = cost;
-
-      purchases.push({
-        id: 'B' + Date.now(),
-        date: today,
-        company: compName,
-        payType: payType,
-        productId: pid,
-        productName: p.name,
-        cat: p.cat,
-        qty: qty,
-        cost: cost,
-        total: qty * cost
-      });
-
-      saveData();
-      renderAll();
-      this.reset();
-      showCustomAlert('পণ্য ক্রয়: ক্রয় এবং স্টক সফলভাবে আপডেট হয়েছে!');
-    };
-
-    function switchStockSector(cat) {
-      currentStockSector = cat;
-      document.getElementById('btn-stock-cement').classList.toggle('active', cat === 'siment');
-      document.getElementById('btn-stock-rod').classList.toggle('active', cat === 'rod');
-      document.getElementById('stock-sector-title').innerText = cat === 'siment' ? 'সিমেন্ট গোডাউন স্টক' : 'রড গোডাউন স্টক';
-      renderStock();
-    }
-
-    function renderStock() {
-      const tbody = document.getElementById('stock-table-body');
-      tbody.innerHTML = '';
-      const list = products.filter(p => p.cat === currentStockSector);
-
-      list.slice().reverse().forEach(p => {
-        const unit = p.cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-        tbody.innerHTML += `
-          <tr>
-            <td><strong>${p.name}</strong></td>
-            <td>৳ ${p.cost}</td>
-            <td>৳ ${p.price}</td>
-            <td><strong style="color:${p.stock < 10 ? 'red' : 'green'};">${p.stock} ${unit}</strong></td>
-          </tr>
-        `;
-      });
-    }
-
-    function openAddRetailerModal() {
-      document.getElementById('add-retailer-modal').style.display = 'flex';
-    }
-
-    function closeAddRetailerModal() {
-      document.getElementById('add-retailer-modal').style.display = 'none';
-      document.getElementById('add-retailer-form-modal').reset();
-    }
-
-    document.getElementById('add-retailer-form-modal').onsubmit = function(e) {
-      e.preventDefault();
-      const ret = {
-        id: 'R' + Date.now(),
-        shop: document.getElementById('ret-shop-m').value,
-        owner: document.getElementById('ret-owner-m').value,
-        phone: document.getElementById('ret-phone-m').value,
-        address: document.getElementById('ret-address-m').value,
-        type: document.getElementById('ret-type-m').value,
-        partyType: document.getElementById('ret-party-m').value,
-        sr: document.getElementById('ret-sr-m').value,
-        cementQty: 0,
-        rodQty: 0,
-        totalAmount: 0
-      };
-      retailers.push(ret);
-      saveData();
-      renderAll();
-      closeAddRetailerModal();
-      showCustomAlert('গ্রাহক ও ডিলার: নতুন রিটেইলার সফলভাবে তৈরি হয়েছে!');
-    };
-
-    function renderRetailers() {
-      const search = (document.getElementById('search-retailer')?.value || '').toLowerCase();
-      const selectedSrFilter = document.getElementById('filter-retailer-sr')?.value || 'all';
-      const selectedPartyFilter = document.getElementById('filter-retailer-party')?.value || 'all';
-
-      const tbody = document.getElementById('retailer-table-body');
-      tbody.innerHTML = '';
-
-      let filtered = retailers.filter(r => 
-        (r.shop.toLowerCase().includes(search) || r.owner.toLowerCase().includes(search) || r.phone.includes(search))
-      );
-
-      if (selectedSrFilter !== 'all') {
-        filtered = filtered.filter(r => r.sr === selectedSrFilter);
-      }
-
-      if (selectedPartyFilter !== 'all') {
-        filtered = filtered.filter(r => (r.partyType || 'normal') === selectedPartyFilter);
-      }
-
-      filtered.slice().reverse().forEach(r => {
-        const partyStatus = r.partyType || 'normal';
-        const partyBadge = partyStatus === 'block' 
-          ? '<span class="badge-block-party"><i class="fa-solid fa-ban"></i> Block Party</span>' 
-          : '<span class="badge-normal-party"><i class="fa-solid fa-circle-check"></i> Normal Party</span>';
-
-        tbody.innerHTML += `
-          <tr>
-            <td>
-              <strong>${r.shop}</strong> ${partyBadge}<br>
-              <small style="color:var(--text-gray);">${r.owner}</small>
-            </td>
-            <td>${r.phone}</td>
-            <td><strong style="color:var(--primary);">${r.sr || 'N/A'}</strong></td>
-            <td>${r.cementQty || 0} ব্যাগ সিমেন্ট<br>${r.rodQty || 0} কেজি রড</td>
-            <td>৳ ${(r.totalAmount || 0).toLocaleString('bn-BD')}</td>
-            <td>
-              <button class="btn-sm btn-info edit-elem" onclick="openEditModal('${r.id}')"><i class="fa-solid fa-pen-to-square"></i> প্রোফাইল</button>
-            </td>
-          </tr>
-        `;
-      });
-    }
-
-    function openEditModal(id) {
-      const r = retailers.find(x => x.id === id);
-      if(!r) return;
-
-      document.getElementById('edit-ret-id').value = r.id;
-      document.getElementById('edit-ret-shop').value = r.shop;
-      document.getElementById('edit-ret-owner').value = r.owner;
-      document.getElementById('edit-ret-phone').value = r.phone;
-      document.getElementById('edit-ret-address').value = r.address;
-      document.getElementById('edit-ret-type').value = r.type;
-      document.getElementById('edit-ret-party').value = r.partyType || 'normal';
-      document.getElementById('edit-ret-sr').value = r.sr;
-
-      document.getElementById('lbl-total-cement-qty').innerText = r.cementQty || 0;
-      document.getElementById('lbl-total-rod-qty').innerText = r.rodQty || 0;
-      document.getElementById('lbl-total-amount').innerText = (r.totalAmount || 0).toLocaleString('bn-BD');
-
-      document.getElementById('edit-retailer-modal').style.display = 'flex';
-    }
-
-    function closeEditModal() {
-      document.getElementById('edit-retailer-modal').style.display = 'none';
-      document.getElementById('daily-entry-form').reset();
-    }
-
-    document.getElementById('daily-entry-form').onsubmit = function(e) {
-      e.preventDefault();
-      const id = document.getElementById('edit-ret-id').value;
-      const r = retailers.find(x => x.id === id);
-
-      const addCement = parseFloat(document.getElementById('entry-new-cement').value) || 0;
-      const addRod = parseFloat(document.getElementById('entry-new-rod').value) || 0;
-      const addAmt = parseFloat(document.getElementById('entry-new-amount').value) || 0;
-      const today = new Date().toISOString().split('T')[0];
-
-      if (r) {
-        r.cementQty = (r.cementQty || 0) + addCement;
-        r.rodQty = (r.rodQty || 0) + addRod;
-        r.totalAmount = (r.totalAmount || 0) + addAmt;
-
-        if (addCement > 0) {
-          sales.push({
-            id: 'S' + Date.now() + 'C',
-            date: today,
-            time: new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }),
-            type: 'cash',
-            custName: r.shop + ' (' + r.owner + ')',
-            custPhone: r.phone,
-            productId: 'P1',
-            productName: 'Shah Special Cement',
-            cat: 'siment',
-            qty: addCement,
-            rate: 0,
-            total: 0,
-            asrName: r.sr || 'N/A'
-          });
-        }
-
-        if (addRod > 0) {
-          sales.push({
-            id: 'S' + Date.now() + 'R',
-            date: today,
-            time: new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }),
-            type: 'cash',
-            custName: r.shop + ' (' + r.owner + ')',
-            custPhone: r.phone,
-            productId: 'P4',
-            productName: 'BSRM 10mm Rod',
-            cat: 'rod',
-            qty: addRod,
-            rate: 0,
-            total: 0,
-            asrName: r.sr || 'N/A'
-          });
-        }
-
-        if (addAmt > 0) {
-          duePayments.push({
-            id: 'DP' + Date.now(),
-            custName: r.shop + ' (' + r.owner + ')',
-            date: today,
-            time: new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }),
-            amount: addAmt
-          });
-        }
-
-        saveData();
-        renderAll();
-        openEditModal(id);
-        showCustomAlert('রিটেইলার প্রোফাইল: আজকের মালামাল ও জমা সফলভাবে সেভ হয়েছে!');
-      }
-    };
-
-    document.getElementById('edit-retailer-form').onsubmit = function(e) {
-      e.preventDefault();
-      const id = document.getElementById('edit-ret-id').value;
-      const r = retailers.find(x => x.id === id);
-
-      r.shop = document.getElementById('edit-ret-shop').value;
-      r.owner = document.getElementById('edit-ret-owner').value;
-      r.phone = document.getElementById('edit-ret-phone').value;
-      r.address = document.getElementById('edit-ret-address').value;
-      r.type = document.getElementById('edit-ret-type').value;
-      r.partyType = document.getElementById('edit-ret-party').value;
-      r.sr = document.getElementById('edit-ret-sr').value;
-
-      saveData();
-      renderAll();
-      closeEditModal();
-      showCustomAlert('রিটেইলার প্রোফাইল তথ্য আপডেট হয়েছে!');
-    };
-
-    document.getElementById('add-asr-form').onsubmit = function(e) {
-      e.preventDefault();
-      if(asrs.length >= 5) {
-        return showCustomAlert('সর্বোচ্চ ৫ জন ASR যোগ করার অনুমতি আছে!');
-      }
-      asrs.push({
-        id: 'SR' + Date.now(),
-        name: document.getElementById('asr-name').value,
-        phone: document.getElementById('asr-phone').value,
-        area: document.getElementById('asr-area').value
-      });
-      saveData();
-      renderAll();
-      this.reset();
-      showCustomAlert('বিক্রয় প্রতিনিধি (ASR): নতুন ASR সফলভাবে যুক্ত হয়েছে!');
-    };
-
-    function filterAsrBySelect(val) {
-      selectedAsrFilter = val;
-      renderTeam();
-    }
-
-    function renderTeam() {
-      const tbody = document.getElementById('team-table-body');
-      const slotsContainer = document.getElementById('asr-slots-container');
-      tbody.innerHTML = '';
-      slotsContainer.innerHTML = '';
-
-      const monthFilter = document.getElementById('global-month-filter').value;
-
-      slotsContainer.innerHTML += `
-        <button class="asr-slot-btn ${selectedAsrFilter === 'all' ? 'active' : ''}" onclick="filterAsrBySelect('all')">
-          সব ASR দেখুন
-        </button>
-      `;
-
-      for(let i = 0; i < 5; i++) {
-        if(asrs[i]) {
-          const aName = asrs[i].name;
-          slotsContainer.innerHTML += `
-            <button class="asr-slot-btn ${selectedAsrFilter === aName ? 'active' : ''}" onclick="filterAsrBySelect('${aName}')">
-              ${aName}
-            </button>
-          `;
-        } else {
-          slotsContainer.innerHTML += `
-            <button class="asr-slot-btn" style="opacity:0.5; cursor:not-allowed;" disabled>
-              + স্লট ${i+1} (খালি)
-            </button>
-          `;
-        }
-      }
-
-      let displayAsrs = asrs;
-      if (selectedAsrFilter !== 'all') {
-        displayAsrs = asrs.filter(a => a.name === selectedAsrFilter);
-      }
-
-      displayAsrs.forEach(a => {
-        const linkedRet = retailers.filter(r => r.sr === a.name);
-        const retCount = linkedRet.length;
-
-        let totalColl = 0;
-        let totalMarketDue = 0;
-        const brandSalesSummary = {};
-
-        linkedRet.forEach(r => {
-          totalColl += (r.totalAmount || 0);
-          
-          const rFullName = r.shop + ' (' + r.owner + ')';
-          if (dues[rFullName]) {
-            totalMarketDue += dues[rFullName];
-          } else if (dues[r.shop]) {
-            totalMarketDue += dues[r.shop];
-          }
-
-          if (r.cementQty > 0) {
-            brandSalesSummary['সিমেন্ট (Cement)'] = { qty: r.cementQty, cat: 'siment' };
-          }
-          if (r.rodQty > 0) {
-            brandSalesSummary['রড (Rod)'] = { qty: r.rodQty, cat: 'rod' };
-          }
+        const from = document.getElementById('sir-filter-from')?.value, to = document.getElementById('sir-filter-to')?.value;
+        let fil = (from && to) ? deos.filter(d => d.date >= from && d.date <= to) : deos;
+        const tb = document.getElementById('sir-deo-table-body');
+        tb.innerHTML = '';
+        fil.slice().reverse().forEach(d => {
+          tb.innerHTML += `<tr><td><strong>${d.date}</strong></td><td><span class="${d.type === 'market' ? 'badge-cash' : 'badge-due'}">${d.type}</span></td><td><small>Prime: ${d.prime}, Special: ${d.special}, Watershed: ${d.watershed}</small></td><td><strong>${d.totalBags} ব্যাগ</strong></td><td>৳ ${d.freightAmount || 0}</td><td><button class="btn-sm btn-info" onclick="openEditDeoModal('${d.id}')">এডিট</button></td></tr>`;
         });
+      };
+
+      window.resetSirDeoFilter = function(){
+        document.getElementById('sir-filter-from').value = '';
+        document.getElementById('sir-filter-to').value = '';
+        renderSirPanel();
+      };
+
+      window.openEditDeoModal = function(id){
+        const d = deos.find(x => x.id === id);
+        if(!d) return;
+        document.getElementById('edit-deo-id').value = d.id;
+        document.getElementById('edit-deo-date').value = d.date;
+        document.getElementById('edit-deo-prime').value = d.prime;
+        document.getElementById('edit-deo-special').value = d.special;
+        document.getElementById('edit-deo-watershed').value = d.watershed;
+        document.getElementById('edit-deo-freight').value = d.freightAmount || 0;
+        document.getElementById('edit-deo-modal').style.display = 'flex';
+      };
+
+      window.closeEditDeoModal = function(){
+        document.getElementById('edit-deo-modal').style.display = 'none';
+      };
+
+      document.getElementById('edit-deo-form').onsubmit = function(e){
+        e.preventDefault();
+        const d = deos.find(x => x.id === document.getElementById('edit-deo-id').value);
+        if(d){
+          d.date = document.getElementById('edit-deo-date').value;
+          d.prime = parseFloat(document.getElementById('edit-deo-prime').value) || 0;
+          d.special = parseFloat(document.getElementById('edit-deo-special').value) || 0;
+          d.watershed = parseFloat(document.getElementById('edit-deo-watershed').value) || 0;
+          d.totalBags = d.prime + d.special + d.watershed;
+          d.freightAmount = parseFloat(document.getElementById('edit-deo-freight').value) || 0;
+          saveData();
+          renderAll();
+          closeEditDeoModal();
+          showCustomAlert('DEO আপডেট হয়েছে!');
+        }
+      };
+
+      window.renderOwnerReport = function(){
+        const today = new Date().toISOString().split('T')[0];
+        const mf = document.getElementById('global-month-filter').value || today.substring(0, 7);
+        let ct = 0, dt = 0, ms = 0, rt = 0, wt = 0, tp = 0, ts = 0, tw = 0, mp = 0, ms_c = 0, mw = 0;
+        let tRod = {}, mRod = {};
 
         sales.forEach(s => {
-          if (!monthFilter || s.date.startsWith(monthFilter)) {
-            if (s.asrName === a.name || linkedRet.some(r => s.custName.includes(r.shop) || s.custName.includes(r.owner))) {
-              if (s.type === 'cash' && s.total > 0) totalColl += s.total;
-
-              if (!brandSalesSummary[s.productName]) {
-                brandSalesSummary[s.productName] = { qty: 0, cat: s.cat };
-              }
-              brandSalesSummary[s.productName].qty += s.qty;
+          const isR = !retailers.some(r => s.custName.includes(r.shop) || s.custName.includes(r.owner));
+          if(s.date === today){
+            if(s.type === 'cash') ct += s.total; else dt += s.total;
+            if(isR) rt += s.total; else wt += s.total;
+            if(s.cat === 'siment'){
+              const nl = s.productName.toLowerCase();
+              if(nl.includes('prime')) tp += s.qty; else if(nl.includes('special')) ts += s.qty; else if(nl.includes('water')) tw += s.qty; else ts += s.qty;
+            } else if(s.cat === 'rod'){
+              tRod[s.productName] = (tRod[s.productName] || 0) + s.qty;
+            }
+          }
+          if(s.date.startsWith(mf)){
+            ms += s.total;
+            if(s.cat === 'siment'){
+              const nl = s.productName.toLowerCase();
+              if(nl.includes('prime')) mp += s.qty; else if(nl.includes('special')) ms_c += s.qty; else if(nl.includes('water')) mw += s.qty; else ms_c += s.qty;
+            } else if(s.cat === 'rod'){
+              mRod[s.productName] = (mRod[s.productName] || 0) + s.qty;
             }
           }
         });
 
-        let brandSalesStr = Object.keys(brandSalesSummary).map(pName => {
-          const unit = brandSalesSummary[pName].cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-          return `${pName}: <b>${brandSalesSummary[pName].qty}</b> ${unit}`;
-        }).join('<br>') || 'কোন বিক্রি রেকর্ড নেই';
+        document.getElementById('owner-today-sales').innerText = `৳ ${(ct + dt).toLocaleString('bn-BD')}`;
+        document.getElementById('owner-today-cash').innerText = `৳ ${ct.toLocaleString('bn-BD')}`;
+        document.getElementById('owner-today-due').innerText = `৳ ${dt.toLocaleString('bn-BD')}`;
+        document.getElementById('owner-month-sales').innerText = `৳ ${ms.toLocaleString('bn-BD')}`;
+        document.getElementById('owner-today-retail').innerText = `৳ ${rt.toLocaleString('bn-BD')}`;
+        document.getElementById('owner-today-wholesale').innerText = `৳ ${wt.toLocaleString('bn-BD')}`;
+        document.getElementById('owner-today-prime').innerText = tp.toLocaleString('bn-BD');
+        document.getElementById('owner-today-special').innerText = ts.toLocaleString('bn-BD');
+        document.getElementById('owner-today-watershed').innerText = tw.toLocaleString('bn-BD');
+        document.getElementById('owner-today-cement-tot').innerText = `${(tp + ts + tw).toLocaleString('bn-BD')} ব্যাগ`;
+        document.getElementById('owner-month-prime').innerText = mp.toLocaleString('bn-BD');
+        document.getElementById('owner-month-special').innerText = ms_c.toLocaleString('bn-BD');
+        document.getElementById('owner-month-watershed').innerText = mw.toLocaleString('bn-BD');
+        document.getElementById('owner-month-cement-tot').innerText = `${(mp + ms_c + mw).toLocaleString('bn-BD')} ব্যাগ`;
 
-        tbody.innerHTML += `
-          <tr>
-            <td><strong>${a.name}</strong><br><small style="color:var(--text-gray);">${a.phone} (${a.area})</small></td>
-            <td><b style="color:var(--primary); font-size:1.1rem;">${retCount}</b> জন</td>
-            <td><small style="color:var(--text-dark);">${brandSalesStr}</small></td>
-            <td><strong style="color:var(--green); font-size:1.05rem;">৳ ${totalColl.toLocaleString('bn-BD')}</strong></td>
-            <td><strong style="color:var(--red); font-size:1.05rem;">৳ ${totalMarketDue.toLocaleString('bn-BD')}</strong></td>
-            <td>
-              <button class="btn-sm btn-info edit-elem" onclick="openEditAsrModal('${a.id}')"><i class="fa-solid fa-pen-to-square"></i> এডিট</button>
-            </td>
-          </tr>
-        `;
-      });
-    }
+        let tRodK = Object.keys(tRod), tTot = 0;
+        document.getElementById('owner-today-rod-details').innerHTML = tRodK.length ? tRodK.map(k => { tTot += tRod[k]; return `${k}: <b>${tRod[k].toLocaleString('bn-BD')}</b> কেজি`; }).join('<br>') : 'আজ কোনো রড বিক্রি নেই';
+        document.getElementById('owner-today-rod-tot').innerText = `${tTot.toLocaleString('bn-BD')} কেজি`;
 
-    function printAsrReport() {
-      const monthFilter = document.getElementById('global-month-filter').value || 'সকল সময়';
-      document.getElementById('rpt-print-title').innerText = 'ASR / বিক্রয় প্রতিনিধি পারফরম্যান্স ও মার্কেট বাকি রিপোর্ট';
-      document.getElementById('rpt-print-sub').innerText = `মাস: ${monthFilter}`;
+        let mRodK = Object.keys(mRod), mTot = 0;
+        document.getElementById('owner-month-rod-details').innerHTML = mRodK.length ? mRodK.map(k => { mTot += mRod[k]; return `${k}: <b>${mRod[k].toLocaleString('bn-BD')}</b> কেজি`; }).join('<br>') : 'চলতি মাসে কোনো রড বিক্রি নেই';
+        document.getElementById('owner-month-rod-tot').innerText = `${mTot.toLocaleString('bn-BD')} কেজি`;
 
-      let html = `<table>
-        <thead>
-          <tr>
-            <th>ASR-এর নাম</th>
-            <th>মোবাইল ও এলাকা</th>
-            <th>মোট রিটেইলার</th>
-            <th>মাল ডেলিভারি সামারি</th>
-            <th>মোট কালেকশন জমা</th>
-            <th>মার্কেট বাকি (Due)</th>
-          </tr>
-        </thead>
-        <tbody>`;
+        let asrT = 0;
+        duePayments.forEach(p => { if(p.date === today) asrT += p.amount; });
+        sales.forEach(s => { if(s.type === 'cash' && s.total > 0 && s.date === today) asrT += s.total; });
+        document.getElementById('owner-today-asr').innerText = `৳ ${asrT.toLocaleString('bn-BD')}`;
 
-      asrs.forEach(a => {
-        const linkedRet = retailers.filter(r => r.sr === a.name);
-        let totalColl = 0;
-        let totalMarketDue = 0;
-        const brandSalesSummary = {};
+        let expT = expenses.filter(e => e.date === today).reduce((a, c) => a + c.amount, 0);
+        document.getElementById('owner-today-exp').innerText = `৳ ${expT.toLocaleString('bn-BD')}`;
 
-        linkedRet.forEach(r => {
-          totalColl += (r.totalAmount || 0);
-          const rFullName = r.shop + ' (' + r.owner + ')';
-          if (dues[rFullName]) totalMarketDue += dues[rFullName];
-          else if (dues[r.shop]) totalMarketDue += dues[r.shop];
+        let bT = bankTx.filter(t => t.date === today).reduce((a, c) => a + c.amount, 0);
+        let bM = bankTx.filter(t => t.date.startsWith(mf)).reduce((a, c) => a + c.amount, 0);
+        document.getElementById('owner-today-bank').innerText = `৳ ${bT.toLocaleString('bn-BD')}`;
+        document.getElementById('owner-month-bank').innerText = `৳ ${bM.toLocaleString('bn-BD')}`;
+
+        let dM = 0, dC = 0;
+        deos.filter(d => d.date.startsWith(mf)).forEach(d => { if(d.type === 'market') dM += d.totalBags; else dC += d.totalBags; });
+        document.getElementById('owner-deo-market').innerText = `${dM.toLocaleString('bn-BD')} ব্যাগ`;
+        document.getElementById('owner-deo-company').innerText = `${dC.toLocaleString('bn-BD')} ব্যাগ`;
+        document.getElementById('owner-deo-total').innerText = `${(dM + dC).toLocaleString('bn-BD')} ব্যাগ`;
+      };
+
+      window.renderDashboard = function(){
+        const today = new Date().toISOString().split('T')[0];
+        let cs = 0, ds = 0;
+        sales.forEach(s => { if(s.date === today){ if(s.type === 'cash') cs += s.total; else ds += s.total; } });
+        document.getElementById('dash-cash-sell').innerText = `৳ ${(cs + ds).toLocaleString('bn-BD')}`;
+        document.getElementById('dash-cash-only').innerText = `৳ ${cs.toLocaleString('bn-BD')}`;
+        document.getElementById('dash-due-only').innerText = `৳ ${ds.toLocaleString('bn-BD')}`;
+
+        let bAmt = 0, bIt = {};
+        purchases.filter(p => p.date === today).forEach(p => {
+          bAmt += (p.total || 0);
+          if(!bIt[p.productName]) bIt[p.productName] = { qty: 0, cat: p.cat };
+          bIt[p.productName].qty += p.qty;
+        });
+        document.getElementById('dash-today-buy').innerText = `৳ ${bAmt.toLocaleString('bn-BD')}`;
+        document.getElementById('dash-today-buy-items').innerHTML = Object.keys(bIt).map(n => `${n}: <b>${bIt[n].qty}</b> ${bIt[n].cat === 'siment' ? 'ব্যাগ' : 'কেজি'}`).join(', ') || 'কোনো ক্রয় নেই';
+
+        const sg = document.getElementById('dash-stock-summary');
+        sg.innerHTML = '';
+        const fP = products.filter(p => selectedDashStockIds.includes(p.id));
+        if(!fP.length){ sg.innerHTML = '<div style="color:var(--text-gray);">কোনো পণ্য সিলেক্ট করা নেই।</div>'; }
+        else {
+          fP.slice().reverse().forEach(p => {
+            sg.innerHTML += `<div class="stock-pill"><div><span class="${p.cat === 'rod' ? 'badge-rod' : 'badge-cement'}">${p.cat === 'rod' ? 'রড' : 'সিমেন্ট'}</span><div style="font-weight:700; margin-top:4px;">${p.name}</div></div><div style="text-align:right;"><div style="font-size:1.15rem; font-weight:800; color:${p.stock > 0 ? 'var(--green)' : 'var(--red)'};">${p.stock}</div><small>${p.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}</small></div></div>`;
+          });
+        }
+
+        let asrT = 0, asrTot = 0;
+        duePayments.forEach(p => { if(p.date === today) asrT += p.amount; asrTot += p.amount; });
+        sales.forEach(s => { if(s.type === 'cash' && s.total > 0){ if(s.date === today) asrT += s.total; asrTot += s.total; } });
+        document.getElementById('dash-asr-today-coll').innerText = `৳ ${asrT.toLocaleString('bn-BD')}`;
+        document.getElementById('dash-asr-total-coll').innerText = `৳ ${asrTot.toLocaleString('bn-BD')}`;
+
+        document.getElementById('dash-bank-today').innerText = `৳ ${bankTx.filter(t => t.date === today).reduce((a, c) => a + c.amount, 0).toLocaleString('bn-BD')}`;
+        document.getElementById('dash-expense-today').innerText = `৳ ${expenses.filter(e => e.date === today).reduce((a, c) => a + c.amount, 0).toLocaleString('bn-BD')}`;
+        document.getElementById('dash-total-due-all').innerText = `৳ ${Object.values(dues).reduce((a, c) => a + c, 0).toLocaleString('bn-BD')}`;
+      };
+
+      window.openStockSelectModal = function(){
+        const c = document.getElementById('stock-checkbox-list');
+        c.innerHTML = '';
+        products.forEach(p => {
+          c.innerHTML += `<div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;"><input type="checkbox" id="chk_${p.id}" value="${p.id}" ${selectedDashStockIds.includes(p.id) ? 'checked' : ''}><label for="chk_${p.id}">${p.name}</label></div>`;
+        });
+        document.getElementById('stock-select-modal').style.display = 'flex';
+      };
+
+      window.closeStockSelectModal = function(){
+        document.getElementById('stock-select-modal').style.display = 'none';
+      };
+
+      document.getElementById('stock-select-form').onsubmit = function(e){
+        e.preventDefault();
+        selectedDashStockIds = [];
+        products.forEach(p => { const chk = document.getElementById(`chk_${p.id}`); if(chk && chk.checked) selectedDashStockIds.push(p.id); });
+        saveData();
+        renderDashboard();
+        closeStockSelectModal();
+        showCustomAlert('ড্যাশবোর্ড স্টক সেভ হয়েছে!');
+      };
+
+      window.populateDropdowns = function(){
+        const ss = document.getElementById('sale-product'), bs = document.getElementById('buy-product-select');
+        const rsm = document.getElementById('ret-sr-m'), ers = document.getElementById('edit-ret-sr'), bks = document.getElementById('bank-select');
+        const ebks = document.getElementById('edit-bank-select'), cs = document.getElementById('cust-select'), cps = document.getElementById('buy-company-select');
+        const ecs = document.getElementById('exp-cat-select'), ercs = document.getElementById('exp-rpt-cat'), asf = document.getElementById('asr-filter-select'), frs = document.getElementById('filter-retailer-sr');
+
+        ss.innerHTML = '<option value="">পণ্য বেছে নিন</option>';
+        bs.innerHTML = '<option value="">পণ্য বেছে নিন</option>';
+        products.forEach(p => {
+          ss.innerHTML += `<option value="${p.id}">${p.name} (${p.cat === 'siment' ? 'সিমেন্ট' : 'রড'})</option>`;
+          bs.innerHTML += `<option value="${p.id}">${p.name}</option>`;
         });
 
-        sales.forEach(s => {
-          if (!monthFilter || monthFilter === 'সকল সময়' || s.date.startsWith(monthFilter)) {
-            if (s.asrName === a.name || linkedRet.some(r => s.custName.includes(r.shop) || s.custName.includes(r.owner))) {
-              if (s.type === 'cash' && s.total > 0) totalColl += s.total;
-              if (!brandSalesSummary[s.productName]) brandSalesSummary[s.productName] = { qty: 0, cat: s.cat };
-              brandSalesSummary[s.productName].qty += s.qty;
+        const asrOpts = '<option value="">ASR বেছে নিন</option>' + asrs.map(a => `<option value="${a.name}">${a.name} (${a.area})</option>`).join('');
+        if(rsm) rsm.innerHTML = asrOpts;
+        if(ers) ers.innerHTML = asrOpts;
+        if(frs) frs.innerHTML = '<option value="all">সব ASR</option>' + asrs.map(a => `<option value="${a.name}">${a.name}</option>`).join('');
+        if(asf){ asf.innerHTML = '<option value="all">সব ASR দেখুন</option>' + asrs.map(a => `<option value="${a.name}">${a.name}</option>`).join(''); asf.value = selectedAsrFilter; }
+
+        bks.innerHTML = '<option value="">ব্যাংক নির্বাচন করুন</option>';
+        ebks.innerHTML = '<option value="">ব্যাংক নির্বাচন করুন</option>';
+        banks.forEach(b => {
+          const opt = `<option value="${b.name}">${b.name} (${b.accNo || 'অ্যাকাউন্ট'})</option>`;
+          bks.innerHTML += opt; ebks.innerHTML += opt;
+        });
+
+        cs.innerHTML = '<option value="">নতুন কাস্টমার টাইপ করুন...</option>';
+        retailers.forEach(r => { cs.innerHTML += `<option value="${r.id}">${r.shop} - ${r.owner} (${r.sr || 'No ASR'})</option>`; });
+
+        cps.innerHTML = '<option value="">কোম্পানি নির্বাচন করুন</option>';
+        companies.forEach(c => { cps.innerHTML += `<option value="${c.name}">${c.name}</option>`; });
+
+        let eco = '<option value="">খাত বেছে নিন</option>', ero = '<option value="">সব খাত দেখুন</option>';
+        expCategories.forEach(c => { eco += `<option value="${c}">${c}</option>`; ero += `<option value="${c}">${c}</option>`; });
+        if(ecs) ecs.innerHTML = eco;
+        if(ercs) ercs.innerHTML = ero;
+      };
+
+      window.onCustomerSelectChange = function(){
+        const r = retailers.find(x => x.id === document.getElementById('cust-select').value);
+        if(r){ document.getElementById('cust-name').value = `${r.shop} (${r.owner})`; document.getElementById('cust-phone').value = r.phone; }
+      };
+
+      document.getElementById('add-product-form').onsubmit = function(e){
+        e.preventDefault();
+        const np = {
+          id: 'P' + Date.now(),
+          cat: document.getElementById('new-p-cat').value,
+          name: document.getElementById('new-p-name').value.trim(),
+          cost: parseFloat(document.getElementById('new-p-cost').value) || 0,
+          price: parseFloat(document.getElementById('new-p-price').value) || 0,
+          stock: parseFloat(document.getElementById('new-p-stock').value) || 0
+        };
+        products.push(np);
+        selectedDashStockIds.push(np.id);
+        saveData();
+        renderAll();
+        this.reset();
+        showCustomAlert('নতুন পণ্য যুক্ত হয়েছে!');
+      };
+
+      window.renderProductMgmt = function(){
+        const tb = document.getElementById('product-mgmt-table');
+        tb.innerHTML = '';
+        if(!products.length){ tb.innerHTML = '<tr><td colspan="6" style="text-align:center;">কোনো পণ্য সংরক্ষিত নেই</td></tr>'; return; }
+        products.slice().reverse().forEach(p => {
+          tb.innerHTML += `<tr><td><span class="${p.cat === 'rod' ? 'badge-rod' : 'badge-cement'}">${p.cat === 'rod' ? 'রড' : 'সিমেন্ট'}</span></td><td><strong>${p.name}</strong></td><td>৳ ${p.cost}</td><td>৳ ${p.price}</td><td><strong style="color:var(--green);">${p.stock} ${p.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}</strong></td><td><button class="btn-sm btn-info edit-elem" onclick="openEditProductModal('${p.id}')">এডিট</button></td></tr>`;
+        });
+      };
+
+      window.openEditProductModal = function(id){
+        const p = products.find(x => x.id === id);
+        if(!p) return;
+        document.getElementById('edit-p-id').value = p.id;
+        document.getElementById('edit-p-cat').value = p.cat;
+        document.getElementById('edit-p-name').value = p.name;
+        document.getElementById('edit-p-cost').value = p.cost;
+        document.getElementById('edit-p-price').value = p.price;
+        document.getElementById('edit-p-stock').value = p.stock;
+        document.getElementById('edit-product-modal').style.display = 'flex';
+      };
+
+      window.closeEditProductModal = function(){
+        document.getElementById('edit-product-modal').style.display = 'none';
+      };
+
+      document.getElementById('edit-product-form').onsubmit = function(e){
+        e.preventDefault();
+        const p = products.find(x => x.id === document.getElementById('edit-p-id').value);
+        if(p){
+          p.cat = document.getElementById('edit-p-cat').value;
+          p.name = document.getElementById('edit-p-name').value;
+          p.cost = parseFloat(document.getElementById('edit-p-cost').value) || 0;
+          p.price = parseFloat(document.getElementById('edit-p-price').value) || 0;
+          p.stock = parseFloat(document.getElementById('edit-p-stock').value) || 0;
+          saveData();
+          renderAll();
+          closeEditProductModal();
+          showCustomAlert('পণ্য আপডেট হয়েছে!');
+        }
+      };
+
+      window.toggleDeoFreightOption = function(){
+        document.getElementById('deo-freight-container').style.display = (document.getElementById('deo-type').value === 'market') ? 'grid' : 'none';
+      };
+
+      document.getElementById('deo-form').onsubmit = function(e){
+        e.preventDefault();
+        const dIn = document.getElementById('deo-date');
+        const dt = dIn.value, ty = document.getElementById('deo-type').value;
+        const pr = parseFloat(document.getElementById('deo-prime').value) || 0;
+        const sp = parseFloat(document.getElementById('deo-special').value) || 0;
+        const ws = parseFloat(document.getElementById('deo-watershed').value) || 0;
+        const fr = ty === 'market' ? (parseFloat(document.getElementById('deo-freight-amount').value) || 0) : 0;
+        const br = ty === 'market' ? document.getElementById('deo-freight-bearer').value : 'none';
+        if(pr === 0 && sp === 0 && ws === 0) return showCustomAlert('সিমেন্টের পরিমাণ লিখুন!');
+        deos.push({ id: 'DEO' + Date.now(), date: dt, type: ty, prime: pr, special: sp, watershed: ws, totalBags: (pr + sp + ws), freightAmount: fr, bearer: br });
+        saveData();
+        renderAll();
+        this.reset();
+        dIn.value = dt;
+        showCustomAlert('DEO সংরক্ষণ হয়েছে!');
+      };
+
+      window.renderDeoSection = function(){
+        const from = document.getElementById('deo-rpt-from')?.value, to = document.getElementById('deo-rpt-to')?.value;
+        const mf = document.getElementById('global-month-filter').value;
+        let tm = 0, tc = 0;
+        const tb = document.getElementById('deo-table-body');
+        tb.innerHTML = '';
+        let fil = (from && to) ? deos.filter(d => d.date >= from && d.date <= to) : (mf ? deos.filter(d => d.date.startsWith(mf)) : deos);
+        fil.slice().reverse().forEach(d => {
+          if(d.type === 'market') tm += d.totalBags; else tc += d.totalBags;
+          tb.innerHTML += `<tr><td><strong>${d.date}</strong></td><td><span class="${d.type === 'market' ? 'badge-cash' : 'badge-due'}">${d.type}</span></td><td><small>Prime: <b>${d.prime}</b>, Special: <b>${d.special}</b>, Watershed: <b>${d.watershed}</b><br><b>মোট: ${d.totalBags} ব্যাগ</b></small></td><td>${d.type === 'market' ? '৳ ' + d.freightAmount : '--'}</td><td><button class="btn-sm btn-info" onclick="openEditDeoModal('${d.id}')">এডিট</button></td></tr>`;
+        });
+        document.getElementById('deo-total-market').innerText = `${tm.toLocaleString('bn-BD')} ব্যাগ`;
+        document.getElementById('deo-total-company').innerText = `${tc.toLocaleString('bn-BD')} ব্যাগ`;
+        document.getElementById('deo-total-all').innerText = `${(tm + tc).toLocaleString('bn-BD')} ব্যাগ`;
+        document.getElementById('deo-diff-total').innerText = `${Math.abs(tm - tc).toLocaleString('bn-BD')} ব্যাগ`;
+      };
+
+      window.resetDeoFilter = function(){
+        document.getElementById('deo-rpt-from').value = '';
+        document.getElementById('deo-rpt-to').value = '';
+        renderDeoSection();
+      };
+
+      window.openSaleWindow = function(mode){
+        const w = document.getElementById('sale-form-window');
+        w.classList.add('active');
+        document.getElementById('current-sale-mode').value = mode;
+        const b = document.getElementById('mode-badge');
+        if(mode === 'cash'){ w.classList.add('cash-theme'); w.classList.remove('due-theme'); b.innerText = 'নগদ বিক্রি'; b.className = 'badge-cash'; }
+        else { w.classList.add('due-theme'); w.classList.remove('cash-theme'); b.innerText = 'বাকি বিক্রি'; b.className = 'badge-due'; }
+      };
+
+      window.closeSaleWindow = function(){
+        const w = document.getElementById('sale-form-window');
+        w.classList.remove('active', 'cash-theme', 'due-theme');
+        document.getElementById('sell-action-form').reset();
+        document.getElementById('live-stock-box').style.display = 'none';
+        document.getElementById('display-total-price').innerText = '0';
+      };
+
+      window.onProductSelect = function(){
+        const p = products.find(x => x.id === document.getElementById('sale-product').value);
+        const sb = document.getElementById('live-stock-box');
+        if(p){
+          document.getElementById('live-stock-count').innerText = `${p.stock} ${p.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}`;
+          document.getElementById('live-product-price').innerText = p.price;
+          document.getElementById('sale-rate').value = p.price;
+          sb.style.display = 'block';
+          calculateTotalCost();
+        } else { sb.style.display = 'none'; }
+      };
+
+      window.calculateTotalCost = function(){
+        const q = parseFloat(document.getElementById('sale-qty').value) || 0;
+        const r = parseFloat(document.getElementById('sale-rate').value) || 0;
+        document.getElementById('display-total-price').innerText = (q * r).toFixed(2);
+      };
+
+      document.getElementById('sell-action-form').onsubmit = function(e){
+        e.preventDefault();
+        const mode = document.getElementById('current-sale-mode').value;
+        const pid = document.getElementById('sale-product').value;
+        const p = products.find(x => x.id === pid);
+        const qty = parseFloat(document.getElementById('sale-qty').value);
+        const rate = parseFloat(document.getElementById('sale-rate').value);
+        const total = qty * rate;
+        let cName = document.getElementById('cust-name').value.trim();
+        const cPhone = document.getElementById('cust-phone').value.trim();
+        const cid = document.getElementById('cust-select').value;
+        const today = new Date().toISOString().split('T')[0];
+
+        if(!p) return showCustomAlert('পণ্য সিলেক্ট করুন!');
+        if(p.stock < qty) return showCustomAlert('পর্যাপ্ত স্টক নেই!');
+
+        p.stock -= qty;
+        let lAsr = 'নগদ/সরাসরি';
+        const mRet = retailers.find(r => r.id === cid || r.shop === cName || cName.includes(r.shop));
+        if(mRet){
+          lAsr = mRet.sr || 'নগদ/সরাসরি';
+          if(p.cat === 'siment') mRet.cementQty = (mRet.cementQty || 0) + qty; else mRet.rodQty = (mRet.rodQty || 0) + qty;
+          if(mode === 'cash') mRet.totalAmount = (mRet.totalAmount || 0) + total;
+        }
+
+        const se = {
+          id: 'S' + Date.now(),
+          date: today,
+          time: new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }),
+          type: mode,
+          custName: cName,
+          custPhone: cPhone,
+          productId: pid,
+          productName: p.name,
+          cat: p.cat,
+          qty: qty,
+          rate: rate,
+          total: total,
+          asrName: lAsr
+        };
+
+        sales.push(se);
+        if(mode === 'due') dues[cName] = (dues[cName] || 0) + total;
+
+        saveData();
+        renderAll();
+        closeSaleWindow();
+        openSellSuccessModal(se);
+      };
+
+      window.openSellSuccessModal = function(s){
+        document.getElementById('pop-cust').innerText = s.custName;
+        document.getElementById('pop-item').innerText = s.productName;
+        document.getElementById('pop-qty').innerText = `${s.qty} ${s.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}`;
+        document.getElementById('pop-total').innerText = '৳ ' + s.total.toFixed(2);
+        const tb = document.getElementById('pop-type');
+        tb.innerText = s.type === 'cash' ? 'নগদ বিক্রি' : 'বাকি বিক্রি';
+        tb.className = s.type === 'cash' ? 'badge-cash' : 'badge-due';
+        document.getElementById('pop-print-btn').onclick = function(){ printSaleInvoice(s.id); };
+        document.getElementById('sell-success-modal').style.display = 'flex';
+      };
+
+      window.closeSellSuccessModal = function(){
+        document.getElementById('sell-success-modal').style.display = 'none';
+      };
+
+      window.printSaleInvoice = function(sId){
+        const s = sales.find(x => x.id === sId);
+        if(!s) return;
+        document.getElementById('p-cust').innerText = s.custName;
+        document.getElementById('p-phone').innerText = s.custPhone || 'N/A';
+        document.getElementById('p-date').innerText = `${s.date} (${s.time})`;
+        document.getElementById('p-type').innerText = s.type === 'cash' ? 'নগদ বিক্রি' : 'বাকি বিক্রি';
+        document.getElementById('p-item').innerText = s.productName;
+        document.getElementById('p-qty').innerText = `${s.qty} ${s.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}`;
+        document.getElementById('p-rate').innerText = s.rate;
+        document.getElementById('p-total').innerText = s.total.toFixed(2);
+        const a = document.getElementById('print-area');
+        a.style.display = 'block';
+        window.print();
+        a.style.display = 'none';
+      };
+
+      window.renderDailySales = function(){
+        const from = document.getElementById('sell-log-from').value, to = document.getElementById('sell-log-to').value;
+        const today = new Date().toISOString().split('T')[0];
+        const tb = document.getElementById('daily-current-sales-table-body');
+        tb.innerHTML = '';
+        let fil = (from && to) ? sales.filter(s => s.date >= from && s.date <= to) : sales.filter(s => s.date === today);
+        fil.slice().reverse().forEach(s => {
+          tb.innerHTML += `<tr><td>${s.date}<br><small>${s.time}</small></td><td><span class="${s.type === 'cash' ? 'badge-cash' : 'badge-due'}">${s.type === 'cash' ? 'নগদ' : 'বাকি'}</span></td><td><strong>${s.custName}</strong><br><small>ASR: ${s.asrName || 'N/A'}</small></td><td>${s.productName}</td><td>${s.qty} ${s.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}</td><td>৳ ${s.rate}</td><td><strong>৳ ${s.total.toFixed(2)}</strong></td><td><button class="btn-sm btn-info" onclick="printSaleInvoice('${s.id}')">প্রিন্ট</button></td></tr>`;
+        });
+      };
+
+      window.resetSellLogFilter = function(){
+        document.getElementById('sell-log-from').value = '';
+        document.getElementById('sell-log-to').value = '';
+        renderDailySales();
+      };
+
+      window.openAddCompanyModal = function(){ document.getElementById('add-company-modal').style.display = 'flex'; };
+      window.closeAddCompanyModal = function(){ document.getElementById('add-company-modal').style.display = 'none'; document.getElementById('add-company-form').reset(); };
+
+      document.getElementById('add-company-form').onsubmit = function(e){
+        e.preventDefault();
+        companies.push({ id: 'C' + Date.now(), name: document.getElementById('new-comp-name').value, phone: document.getElementById('new-comp-phone').value, address: document.getElementById('new-comp-address').value });
+        saveData();
+        renderAll();
+        closeAddCompanyModal();
+        showCustomAlert('কোম্পানি যুক্ত হয়েছে!');
+      };
+
+      window.renderCompanies = function(){
+        const tb = document.getElementById('company-list-table');
+        tb.innerHTML = '';
+        companies.slice().reverse().forEach(c => { tb.innerHTML += `<tr><td><strong>${c.name}</strong></td><td>${c.phone || '--'}</td><td>${c.address || '--'}</td></tr>`; });
+      };
+
+      window.onBuyProductSelect = function(){
+        const p = products.find(x => x.id === document.getElementById('buy-product-select').value);
+        if(p) document.getElementById('buy-cost').value = p.cost;
+      };
+
+      document.getElementById('buy-form').onsubmit = function(e){
+        e.preventDefault();
+        const p = products.find(x => x.id === document.getElementById('buy-product-select').value);
+        const qty = parseFloat(document.getElementById('buy-qty').value);
+        const cost = parseFloat(document.getElementById('buy-cost').value);
+        if(!p) return showCustomAlert('পণ্য নির্বাচন করুন!');
+        p.stock += qty;
+        p.cost = cost;
+        purchases.push({
+          id: 'B' + Date.now(),
+          date: new Date().toISOString().split('T')[0],
+          company: document.getElementById('buy-company-select').value,
+          payType: document.getElementById('buy-payment-type').value,
+          productId: p.id,
+          productName: p.name,
+          cat: p.cat,
+          qty: qty,
+          cost: cost,
+          total: qty * cost
+        });
+        saveData();
+        renderAll();
+        this.reset();
+        showCustomAlert('ক্রয় এবং স্টক আপডেট হয়েছে!');
+      };
+
+      window.switchStockSector = function(cat){
+        currentStockSector = cat;
+        document.getElementById('btn-stock-cement').classList.toggle('active', cat === 'siment');
+        document.getElementById('btn-stock-rod').classList.toggle('active', cat === 'rod');
+        document.getElementById('stock-sector-title').innerText = cat === 'siment' ? 'সিমেন্ট গোডাউন স্টক' : 'রড গোডাউন স্টক';
+        renderStock();
+      };
+
+      window.renderStock = function(){
+        const tb = document.getElementById('stock-table-body');
+        tb.innerHTML = '';
+        products.filter(p => p.cat === currentStockSector).slice().reverse().forEach(p => {
+          tb.innerHTML += `<tr><td><strong>${p.name}</strong></td><td>৳ ${p.cost}</td><td>৳ ${p.price}</td><td><strong style="color:${p.stock < 10 ? 'red' : 'green'};">${p.stock} ${p.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}</strong></td></tr>`;
+        });
+      };
+
+      window.openAddRetailerModal = function(){ document.getElementById('add-retailer-modal').style.display = 'flex'; };
+      window.closeAddRetailerModal = function(){ document.getElementById('add-retailer-modal').style.display = 'none'; document.getElementById('add-retailer-form-modal').reset(); };
+
+      document.getElementById('add-retailer-form-modal').onsubmit = function(e){
+        e.preventDefault();
+        retailers.push({
+          id: 'R' + Date.now(),
+          shop: document.getElementById('ret-shop-m').value,
+          owner: document.getElementById('ret-owner-m').value,
+          phone: document.getElementById('ret-phone-m').value,
+          address: document.getElementById('ret-address-m').value,
+          type: document.getElementById('ret-type-m').value,
+          partyType: document.getElementById('ret-party-m').value,
+          sr: document.getElementById('ret-sr-m').value,
+          cementQty: 0, rodQty: 0, totalAmount: 0
+        });
+        saveData();
+        renderAll();
+        closeAddRetailerModal();
+        showCustomAlert('নতুন রিটেইলার যুক্ত হয়েছে!');
+      };
+
+      window.renderRetailers = function(){
+        const s = (document.getElementById('search-retailer')?.value || '').toLowerCase();
+        const sf = document.getElementById('filter-retailer-sr')?.value || 'all';
+        const pf = document.getElementById('filter-retailer-party')?.value || 'all';
+        const tb = document.getElementById('retailer-table-body');
+        tb.innerHTML = '';
+        let fil = retailers.filter(r => (r.shop.toLowerCase().includes(s) || r.owner.toLowerCase().includes(s) || r.phone.includes(s)));
+        if(sf !== 'all') fil = fil.filter(r => r.sr === sf);
+        if(pf !== 'all') fil = fil.filter(r => (r.partyType || 'normal') === pf);
+
+        fil.slice().reverse().forEach(r => {
+          const pb = (r.partyType === 'block') ? '<span class="badge-block-party">Block Party</span>' : '<span class="badge-normal-party">Normal Party</span>';
+          tb.innerHTML += `<tr><td><strong>${r.shop}</strong> ${pb}<br><small>${r.owner}</small></td><td>${r.phone}</td><td><strong style="color:var(--primary);">${r.sr || 'N/A'}</strong></td><td>${r.cementQty || 0} ব্যাগ সিমেন্ট<br>${r.rodQty || 0} কেজি রড</td><td>৳ ${(r.totalAmount || 0).toLocaleString('bn-BD')}</td><td><button class="btn-sm btn-info edit-elem" onclick="openEditModal('${r.id}')">প্রোফাইল</button></td></tr>`;
+        });
+      };
+
+      window.openEditModal = function(id){
+        const r = retailers.find(x => x.id === id);
+        if(!r) return;
+        document.getElementById('edit-ret-id').value = r.id;
+        document.getElementById('edit-ret-shop').value = r.shop;
+        document.getElementById('edit-ret-owner').value = r.owner;
+        document.getElementById('edit-ret-phone').value = r.phone;
+        document.getElementById('edit-ret-address').value = r.address;
+        document.getElementById('edit-ret-type').value = r.type;
+        document.getElementById('edit-ret-party').value = r.partyType || 'normal';
+        document.getElementById('edit-ret-sr').value = r.sr;
+        document.getElementById('lbl-total-cement-qty').innerText = r.cementQty || 0;
+        document.getElementById('lbl-total-rod-qty').innerText = r.rodQty || 0;
+        document.getElementById('lbl-total-amount').innerText = (r.totalAmount || 0).toLocaleString('bn-BD');
+        document.getElementById('edit-retailer-modal').style.display = 'flex';
+      };
+
+      window.closeEditModal = function(){
+        document.getElementById('edit-retailer-modal').style.display = 'none';
+        document.getElementById('daily-entry-form').reset();
+      };
+
+      document.getElementById('daily-entry-form').onsubmit = function(e){
+        e.preventDefault();
+        const r = retailers.find(x => x.id === document.getElementById('edit-ret-id').value);
+        const ac = parseFloat(document.getElementById('entry-new-cement').value) || 0;
+        const ar = parseFloat(document.getElementById('entry-new-rod').value) || 0;
+        const am = parseFloat(document.getElementById('entry-new-amount').value) || 0;
+        const today = new Date().toISOString().split('T')[0];
+        if(r){
+          r.cementQty = (r.cementQty || 0) + ac;
+          r.rodQty = (r.rodQty || 0) + ar;
+          r.totalAmount = (r.totalAmount || 0) + am;
+          if(ac > 0) sales.push({ id: 'S' + Date.now() + 'C', date: today, time: new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }), type: 'cash', custName: `${r.shop} (${r.owner})`, custPhone: r.phone, productId: 'P1', productName: 'Shah Special Cement', cat: 'siment', qty: ac, rate: 0, total: 0, asrName: r.sr || 'N/A' });
+          if(ar > 0) sales.push({ id: 'S' + Date.now() + 'R', date: today, time: new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }), type: 'cash', custName: `${r.shop} (${r.owner})`, custPhone: r.phone, productId: 'P4', productName: 'BSRM 10mm Rod', cat: 'rod', qty: ar, rate: 0, total: 0, asrName: r.sr || 'N/A' });
+          if(am > 0) duePayments.push({ id: 'DP' + Date.now(), custName: `${r.shop} (${r.owner})`, date: today, time: new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }), amount: am });
+          saveData();
+          renderAll();
+          openEditModal(r.id);
+          showCustomAlert('দৈনিক এন্ট্রি সেভ হয়েছে!');
+        }
+      };
+
+      document.getElementById('edit-retailer-form').onsubmit = function(e){
+        e.preventDefault();
+        const r = retailers.find(x => x.id === document.getElementById('edit-ret-id').value);
+        if(r){
+          r.shop = document.getElementById('edit-ret-shop').value;
+          r.owner = document.getElementById('edit-ret-owner').value;
+          r.phone = document.getElementById('edit-ret-phone').value;
+          r.address = document.getElementById('edit-ret-address').value;
+          r.type = document.getElementById('edit-ret-type').value;
+          r.partyType = document.getElementById('edit-ret-party').value;
+          r.sr = document.getElementById('edit-ret-sr').value;
+          saveData();
+          renderAll();
+          closeEditModal();
+          showCustomAlert('রিটেইলার আপডেট হয়েছে!');
+        }
+      };
+
+      document.getElementById('add-asr-form').onsubmit = function(e){
+        e.preventDefault();
+        if(asrs.length >= 5) return showCustomAlert('সর্বোচ্চ ৫ জন ASR যোগ করার অনুমতি আছে!');
+        asrs.push({ id: 'SR' + Date.now(), name: document.getElementById('asr-name').value, phone: document.getElementById('asr-phone').value, area: document.getElementById('asr-area').value });
+        saveData();
+        renderAll();
+        this.reset();
+        showCustomAlert('ASR যোগ হয়েছে!');
+      };
+
+      window.filterAsrBySelect = function(val){
+        selectedAsrFilter = val;
+        renderTeam();
+      };
+
+      window.renderTeam = function(){
+        const tb = document.getElementById('team-table-body'), sc = document.getElementById('asr-slots-container');
+        tb.innerHTML = ''; sc.innerHTML = '';
+        const mf = document.getElementById('global-month-filter').value;
+        sc.innerHTML += `<button class="asr-slot-btn ${selectedAsrFilter === 'all' ? 'active' : ''}" onclick="filterAsrBySelect('all')">সব ASR দেখুন</button>`;
+        for(let i = 0; i < 5; i++){
+          if(asrs[i]){ sc.innerHTML += `<button class="asr-slot-btn ${selectedAsrFilter === asrs[i].name ? 'active' : ''}" onclick="filterAsrBySelect('${asrs[i].name}')">${asrs[i].name}</button>`; }
+          else { sc.innerHTML += `<button class="asr-slot-btn" style="opacity:0.5;" disabled>+ স্লট ${i+1} (খালি)</button>`; }
+        }
+
+        let dAsr = selectedAsrFilter !== 'all' ? asrs.filter(a => a.name === selectedAsrFilter) : asrs;
+        dAsr.forEach(a => {
+          const lRet = retailers.filter(r => r.sr === a.name);
+          let tc = 0, td = 0, bSum = {};
+          lRet.forEach(r => {
+            tc += (r.totalAmount || 0);
+            const fn = `${r.shop} (${r.owner})`;
+            if(dues[fn]) td += dues[fn]; else if(dues[r.shop]) td += dues[r.shop];
+            if(r.cementQty > 0) bSum['সিমেন্ট'] = { qty: r.cementQty, cat: 'siment' };
+            if(r.rodQty > 0) bSum['রড'] = { qty: r.rodQty, cat: 'rod' };
+          });
+          sales.forEach(s => {
+            if(!mf || s.date.startsWith(mf)){
+              if(s.asrName === a.name || lRet.some(r => s.custName.includes(r.shop) || s.custName.includes(r.owner))){
+                if(s.type === 'cash' && s.total > 0) tc += s.total;
+                if(!bSum[s.productName]) bSum[s.productName] = { qty: 0, cat: s.cat };
+                bSum[s.productName].qty += s.qty;
+              }
+            }
+          });
+          let bStr = Object.keys(bSum).map(n => `${n}: <b>${bSum[n].qty}</b> ${bSum[n].cat === 'siment' ? 'ব্যাগ' : 'কেজি'}`).join('<br>') || 'কোন বিক্রি নেই';
+          tb.innerHTML += `<tr><td><strong>${a.name}</strong><br><small>${a.phone} (${a.area})</small></td><td><b>${lRet.length}</b> জন</td><td><small>${bStr}</small></td><td><strong style="color:var(--green);">৳ ${tc.toLocaleString('bn-BD')}</strong></td><td><strong style="color:var(--red);">৳ ${td.toLocaleString('bn-BD')}</strong></td><td><button class="btn-sm btn-info edit-elem" onclick="openEditAsrModal('${a.id}')">এডিট</button></td></tr>`;
+        });
+      };
+
+      window.printAsrReport = function(){
+        const mf = document.getElementById('global-month-filter').value || 'সকল সময়';
+        document.getElementById('rpt-print-title').innerText = 'ASR পারফরম্যান্স ও মার্কেট বাকি রিপোর্ট';
+        document.getElementById('rpt-print-sub').innerText = `মাস: ${mf}`;
+        let h = `<table><thead><tr><th>ASR-এর নাম</th><th>মোবাইল ও এলাকা</th><th>মোট রিটেইলার</th><th>মোট কালেকশন</th><th>মার্কেট বাকি</th></tr></thead><tbody>`;
+        asrs.forEach(a => {
+          const lRet = retailers.filter(r => r.sr === a.name);
+          let tc = 0, td = 0;
+          lRet.forEach(r => { tc += (r.totalAmount || 0); const fn = `${r.shop} (${r.owner})`; if(dues[fn]) td += dues[fn]; else if(dues[r.shop]) td += dues[r.shop]; });
+          h += `<tr><td><b>${a.name}</b></td><td>${a.phone} (${a.area})</td><td>${lRet.length} জন</td><td>৳ ${tc.toLocaleString('bn-BD')}</td><td>৳ ${td.toLocaleString('bn-BD')}</td></tr>`;
+        });
+        h += `</tbody></table>`;
+        document.getElementById('rpt-print-content').innerHTML = h;
+        const pa = document.getElementById('report-print-area');
+        pa.style.display = 'block';
+        window.print();
+        pa.style.display = 'none';
+      };
+
+      window.openEditAsrModal = function(id){
+        const a = asrs.find(x => x.id === id);
+        if(!a) return;
+        document.getElementById('edit-asr-id').value = a.id;
+        document.getElementById('edit-asr-name').value = a.name;
+        document.getElementById('edit-asr-phone').value = a.phone;
+        document.getElementById('edit-asr-area').value = a.area;
+        document.getElementById('edit-asr-modal').style.display = 'flex';
+      };
+
+      window.closeEditAsrModal = function(){ document.getElementById('edit-asr-modal').style.display = 'none'; };
+
+      document.getElementById('edit-asr-form').onsubmit = function(e){
+        e.preventDefault();
+        const a = asrs.find(x => x.id === document.getElementById('edit-asr-id').value);
+        if(a){
+          const old = a.name;
+          a.name = document.getElementById('edit-asr-name').value;
+          a.phone = document.getElementById('edit-asr-phone').value;
+          a.area = document.getElementById('edit-asr-area').value;
+          retailers.forEach(r => { if(r.sr === old) r.sr = a.name; });
+          saveData();
+          renderAll();
+          closeEditAsrModal();
+          showCustomAlert('ASR আপডেট হয়েছে!');
+        }
+      };
+
+      window.renderDues = function(){
+        const s = (document.getElementById('search-due')?.value || '').toLowerCase();
+        const tb = document.getElementById('due-table-body');
+        tb.innerHTML = '';
+        Object.keys(dues).forEach(c => {
+          const amt = dues[c];
+          if(amt > 0){
+            const cSales = sales.filter(x => x.custName === c && x.type === 'due');
+            const ls = cSales[cSales.length - 1];
+            const ph = ls ? ls.custPhone : '--';
+            if(!s || c.toLowerCase().includes(s) || ph.includes(s)){
+              let ism = {};
+              cSales.forEach(x => { if(!ism[x.productName]) ism[x.productName] = { qty: 0, cat: x.cat }; ism[x.productName].qty += x.qty; });
+              let iStr = Object.keys(ism).map(n => `${n}: <b>${ism[n].qty}</b> ${ism[n].cat === 'siment' ? 'ব্যাগ' : 'কেজি'}`).join('<br>') || '--';
+              tb.innerHTML += `<tr><td><strong>${c}</strong></td><td>${ph}</td><td>--</td><td><small>${iStr}</small></td><td><strong style="color:var(--red);">৳ ${amt.toFixed(2)}</strong></td><td><button class="btn-sm btn-info" onclick="openCustStatementModal('${c}')">বিস্তারিত</button> <button class="btn-sm btn-success edit-elem" onclick="openDuePaymentModal('${c}')">টাকা জমা</button></td></tr>`;
             }
           }
         });
+      };
 
-        let brandSalesStr = Object.keys(brandSalesSummary).map(pName => {
-          const unit = brandSalesSummary[pName].cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-          return `${pName}: ${brandSalesSummary[pName].qty} ${unit}`;
-        }).join(', ') || 'কোন বিক্রি নেই';
-
-        html += `<tr>
-          <td><b>${a.name}</b></td>
-          <td>${a.phone} (${a.area})</td>
-          <td>${linkedRet.length} জন</td>
-          <td>${brandSalesStr}</td>
-          <td>৳ ${totalColl.toLocaleString('bn-BD')}</td>
-          <td>৳ ${totalMarketDue.toLocaleString('bn-BD')}</td>
-        </tr>`;
-      });
-
-      html += `</tbody></table>`;
-      document.getElementById('rpt-print-content').innerHTML = html;
-
-      const printArea = document.getElementById('report-print-area');
-      printArea.style.display = 'block';
-      window.print();
-      printArea.style.display = 'none';
-    }
-
-    function openEditAsrModal(id) {
-      const a = asrs.find(x => x.id === id);
-      if (!a) return;
-
-      document.getElementById('edit-asr-id').value = a.id;
-      document.getElementById('edit-asr-name').value = a.name;
-      document.getElementById('edit-asr-phone').value = a.phone;
-      document.getElementById('edit-asr-area').value = a.area;
-
-      document.getElementById('edit-asr-modal').style.display = 'flex';
-    }
-
-    function closeEditAsrModal() {
-      document.getElementById('edit-asr-modal').style.display = 'none';
-      document.getElementById('edit-asr-form').reset();
-    }
-
-    document.getElementById('edit-asr-form').onsubmit = function(e) {
-      e.preventDefault();
-      const id = document.getElementById('edit-asr-id').value;
-      const a = asrs.find(x => x.id === id);
-
-      if (a) {
-        const oldName = a.name;
-        a.name = document.getElementById('edit-asr-name').value;
-        a.phone = document.getElementById('edit-asr-phone').value;
-        a.area = document.getElementById('edit-asr-area').value;
-
-        retailers.forEach(r => {
-          if (r.sr === oldName) r.sr = a.name;
+      window.openCustStatementModal = function(cName){
+        document.getElementById('stmt-cust-name').innerText = cName;
+        const tb = document.getElementById('stmt-table-body');
+        tb.innerHTML = '';
+        let tl = [];
+        sales.filter(s => s.custName === cName && s.type === 'due').forEach(s => { tl.push({ date: `${s.date} (${s.time})`, desc: s.productName, qty: `${s.qty} ${s.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}`, rate: `৳ ${s.rate}`, bill: s.total, paid: 0, ts: s.id.replace('S','') }); });
+        duePayments.filter(p => p.custName === cName).forEach(p => { tl.push({ date: `${p.date} (${p.time})`, desc: 'বাকি জমা/পরিশোধ', qty: '--', rate: '--', bill: 0, paid: p.amount, ts: p.id.replace('DP','') }); });
+        tl.sort((a,b) => b.ts - a.ts);
+        tl.forEach(item => {
+          tb.innerHTML += `<tr><td>${item.date}</td><td><strong>${item.desc}</strong></td><td>${item.qty}</td><td>${item.rate}</td><td>${item.bill > 0 ? '৳ ' + item.bill.toFixed(2) : '--'}</td><td>${item.paid > 0 ? '<strong style="color:var(--green);">৳ ' + item.paid.toFixed(2) + '</strong>' : '--'}</td></tr>`;
         });
+        document.getElementById('stmt-total-due-display').innerText = (dues[cName] || 0).toFixed(2);
+        document.getElementById('cust-statement-modal').style.display = 'flex';
+      };
 
+      window.closeCustStatementModal = function(){ document.getElementById('cust-statement-modal').style.display = 'none'; };
+
+      window.openDuePaymentModal = function(c){
+        document.getElementById('due-pay-cust-name').value = c;
+        document.getElementById('due-pay-cust-display').innerText = c;
+        document.getElementById('due-payment-modal').style.display = 'flex';
+      };
+
+      window.closeDuePaymentModal = function(){ document.getElementById('due-payment-modal').style.display = 'none'; document.getElementById('due-payment-form').reset(); };
+
+      document.getElementById('due-payment-form').onsubmit = function(e){
+        e.preventDefault();
+        const c = document.getElementById('due-pay-cust-name').value;
+        const p = parseFloat(document.getElementById('due-pay-amount').value);
+        if(dues[c]){ dues[c] -= p; if(dues[c] < 0) dues[c] = 0; }
+        duePayments.push({ id: 'DP' + Date.now(), custName: c, date: new Date().toISOString().split('T')[0], time: new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }), amount: p });
         saveData();
         renderAll();
-        closeEditAsrModal();
-        showCustomAlert('ASR সেকশন: ASR তথ্য সফলভাবে আপডেট করা হয়েছে!');
-      }
-    };
+        closeDuePaymentModal();
+        showCustomAlert('বাকি টাকা জমা নেওয়া হয়েছে!');
+      };
 
-    function renderDues() {
-      const search = (document.getElementById('search-due')?.value || '').toLowerCase();
-      const tbody = document.getElementById('due-table-body');
-      tbody.innerHTML = '';
+      window.openAddBankModal = function(){ document.getElementById('add-bank-modal').style.display = 'flex'; };
+      window.closeAddBankModal = function(){ document.getElementById('add-bank-modal').style.display = 'none'; document.getElementById('add-bank-form').reset(); };
 
-      Object.keys(dues).forEach(cust => {
-        const amt = dues[cust];
-        if (amt > 0) {
-          const custDueSales = sales.filter(s => s.custName === cust && s.type === 'due');
-          const lastSale = custDueSales[custDueSales.length - 1];
-          const phone = lastSale ? lastSale.custPhone : '--';
-          const addr = lastSale ? lastSale.custAddr : '--';
+      document.getElementById('add-bank-form').onsubmit = function(e){
+        e.preventDefault();
+        banks.push({ id: 'B' + Date.now(), name: document.getElementById('new-bank-name').value, accNo: document.getElementById('new-bank-acc').value, address: document.getElementById('new-bank-address').value });
+        saveData();
+        renderAll();
+        closeAddBankModal();
+        showCustomAlert('নতুন ব্যাংক যুক্ত হয়েছে!');
+      };
 
-          if (!search || cust.toLowerCase().includes(search) || phone.toLowerCase().includes(search)) {
-            const itemSummary = {};
-            custDueSales.forEach(s => {
-              if (!itemSummary[s.productName]) {
-                itemSummary[s.productName] = { qty: 0, cat: s.cat };
-              }
-              itemSummary[s.productName].qty += s.qty;
-            });
+      document.getElementById('bank-deposit-form').onsubmit = function(e){
+        e.preventDefault();
+        const dIn = document.getElementById('bank-dep-date');
+        bankTx.push({ id: 'BT' + Date.now(), date: dIn.value, bankName: document.getElementById('bank-select').value, amount: parseFloat(document.getElementById('bank-dep-amount').value), note: document.getElementById('bank-dep-note').value });
+        saveData();
+        renderAll();
+        this.reset();
+        dIn.value = new Date().toISOString().split('T')[0];
+        showCustomAlert('ব্যাংক ডিপোজিট সম্পন্ন হয়েছে!');
+      };
 
-            let itemDetailsStr = Object.keys(itemSummary).map(pName => {
-              const unit = itemSummary[pName].cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-              return `${pName}: <b>${itemSummary[pName].qty}</b> ${unit}`;
-            }).join('<br>') || 'কোন পণ্য রেকর্ড নেই';
+      window.renderBanking = function(){
+        const bt = document.getElementById('bank-list-table');
+        bt.innerHTML = '';
+        banks.slice().reverse().forEach(b => { bt.innerHTML += `<tr><td><strong>${b.name}</strong></td><td>${b.accNo || '--'}</td><td>${b.address || '--'}</td></tr>`; });
 
-            tbody.innerHTML += `
-              <tr>
-                <td><strong>${cust}</strong></td>
-                <td>${phone}</td>
-                <td>${addr}</td>
-                <td><small style="color:var(--text-dark);">${itemDetailsStr}</small></td>
-                <td><strong style="color:var(--red);">৳ ${amt.toFixed(2)}</strong></td>
-                <td>
-                  <button class="btn-sm btn-info" onclick="openCustStatementModal('${cust}')"><i class="fa-solid fa-list-check"></i> বিস্তারিত</button>
-                  <button class="btn-sm btn-success edit-elem" onclick="openDuePaymentModal('${cust}')"><i class="fa-solid fa-hand-holding-dollar"></i> টাকা পরিশোধ</button>
-                </td>
-              </tr>
-            `;
+        const sm = document.getElementById('bank-month-filter')?.value || new Date().toISOString().substring(0,7);
+        const from = document.getElementById('bank-rpt-from').value, to = document.getElementById('bank-rpt-to').value;
+        const tb = document.getElementById('banking-history-table');
+        tb.innerHTML = '';
+        let tot = 0, bTot = {};
+        let fil = (from && to) ? bankTx.filter(t => t.date >= from && t.date <= to) : (sm ? bankTx.filter(t => t.date.startsWith(sm)) : bankTx);
+        fil.slice().reverse().forEach(t => {
+          tot += t.amount;
+          bTot[t.bankName] = (bTot[t.bankName] || 0) + t.amount;
+          tb.innerHTML += `<tr><td>${t.date}</td><td><strong>${t.bankName}</strong></td><td><strong style="color:var(--green);">৳ ${t.amount.toLocaleString('bn-BD')}</strong></td><td>${t.note || '--'}</td><td><button class="btn-sm btn-info edit-elem" onclick="openEditBankModal('${t.id}')">এডিট</button></td></tr>`;
+        });
+        document.getElementById('bank-total-deposited').innerText = `৳ ${tot.toLocaleString('bn-BD')}`;
+        const sd = document.getElementById('bank-wise-summary-list');
+        if(sd){
+          let k = Object.keys(bTot);
+          sd.innerHTML = k.length ? k.map(x => `• ${x}: <b style="color:var(--green);">৳ ${bTot[x].toLocaleString('bn-BD')}</b>`).join('<br>') : 'কোনো জমার রেকর্ড নেই';
+        }
+      };
+
+      window.printMonthlyBankReport = function(){
+        const sm = document.getElementById('bank-month-filter')?.value || new Date().toISOString().substring(0,7);
+        document.getElementById('rpt-print-title').innerText = 'মাসিক ব্যাংক ডিপোজিট স্টেটমেন্ট';
+        document.getElementById('rpt-print-sub').innerText = `মাস: ${sm}`;
+        let mTx = bankTx.filter(t => t.date.startsWith(sm)), bW = {}, gt = 0;
+        mTx.forEach(t => { bW[t.bankName] = (bW[t.bankName] || 0) + t.amount; gt += t.amount; });
+        let h = `<div style="margin-bottom:15px;"><b>ব্যাংক সামারি:</b><br>` + Object.keys(bW).map(b => `• ${b}: <b>৳ ${bW[b].toLocaleString('bn-BD')}</b>`).join('<br>') + `<br><br><b>সর্বমোট জমা: ৳ ${gt.toLocaleString('bn-BD')}</b></div><table><thead><tr><th>তারিখ</th><th>ব্যাংক</th><th>টাকার পরিমাণ</th><th>নোট</th></tr></thead><tbody>`;
+        mTx.forEach(t => { h += `<tr><td>${t.date}</td><td>${t.bankName}</td><td>৳ ${t.amount.toLocaleString('bn-BD')}</td><td>${t.note || '--'}</td></tr>`; });
+        h += `</tbody></table>`;
+        document.getElementById('rpt-print-content').innerHTML = h;
+        const pa = document.getElementById('report-print-area');
+        pa.style.display = 'block';
+        window.print();
+        pa.style.display = 'none';
+      };
+
+      window.resetBankFilter = function(){
+        document.getElementById('bank-rpt-from').value = '';
+        document.getElementById('bank-rpt-to').value = '';
+        renderBanking();
+      };
+
+      window.openEditBankModal = function(id){
+        const t = bankTx.find(x => x.id === id);
+        if(!t) return;
+        document.getElementById('edit-bank-tx-id').value = t.id;
+        document.getElementById('edit-bank-dep-date').value = t.date;
+        document.getElementById('edit-bank-select').value = t.bankName;
+        document.getElementById('edit-bank-dep-amount').value = t.amount;
+        document.getElementById('edit-bank-dep-note').value = t.note || '';
+        document.getElementById('edit-bank-modal').style.display = 'flex';
+      };
+
+      window.closeEditBankModal = function(){ document.getElementById('edit-bank-modal').style.display = 'none'; };
+
+      document.getElementById('edit-bank-deposit-form').onsubmit = function(e){
+        e.preventDefault();
+        const t = bankTx.find(x => x.id === document.getElementById('edit-bank-tx-id').value);
+        if(t){
+          t.date = document.getElementById('edit-bank-dep-date').value;
+          t.bankName = document.getElementById('edit-bank-select').value;
+          t.amount = parseFloat(document.getElementById('edit-bank-dep-amount').value);
+          t.note = document.getElementById('edit-bank-dep-note').value;
+          saveData();
+          renderAll();
+          closeEditBankModal();
+          showCustomAlert('ব্যাংক ডিপোজিট আপডেট হয়েছে!');
+        }
+      };
+
+      window.openAddExpCatModal = function(){ document.getElementById('add-expcat-modal').style.display = 'flex'; };
+      window.closeAddExpCatModal = function(){ document.getElementById('add-expcat-modal').style.display = 'none'; document.getElementById('add-expcat-form').reset(); };
+
+      document.getElementById('add-expcat-form').onsubmit = function(e){
+        e.preventDefault();
+        const c = document.getElementById('new-expcat-name').value.trim();
+        if(c && !expCategories.includes(c)){ expCategories.push(c); saveData(); renderAll(); closeAddExpCatModal(); showCustomAlert('খরচের খাত যোগ হয়েছে!'); }
+        else { showCustomAlert('খাতটি ইতিমধ্যেই বিদ্যমান!'); }
+      };
+
+      document.getElementById('expense-form').onsubmit = function(e){
+        e.preventDefault();
+        expenses.push({
+          id: 'E' + Date.now(),
+          date: new Date().toISOString().split('T')[0],
+          category: document.getElementById('exp-cat-select').value,
+          desc: document.getElementById('exp-desc').value,
+          amount: parseFloat(document.getElementById('exp-amount').value)
+        });
+        saveData();
+        renderAll();
+        this.reset();
+        showCustomAlert('খরচ সংরক্ষণ হয়েছে!');
+      };
+
+      window.renderExpenses = function(){
+        const today = new Date().toISOString().split('T')[0];
+        const sm = document.getElementById('exp-month-filter')?.value || today.substring(0, 7);
+        const tb = document.getElementById('expense-table-body');
+        tb.innerHTML = '';
+        let to = 0, tp = 0, ta = 0, cMap = {};
+        expenses.forEach(e => {
+          if(e.date.startsWith(sm)){
+            ta += e.amount;
+            if(e.category === 'অফিস') to += e.amount;
+            if(e.category === 'ব্যক্তিগত নেওয়া') tp += e.amount;
+            cMap[e.category] = (cMap[e.category] || 0) + e.amount;
           }
-        }
-      });
-    }
-
-    function openCustStatementModal(custName) {
-      document.getElementById('stmt-cust-name').innerText = custName;
-      const tbody = document.getElementById('stmt-table-body');
-      tbody.innerHTML = '';
-
-      const custSales = sales.filter(s => s.custName === custName && s.type === 'due');
-      const custPayments = duePayments.filter(p => p.custName === custName);
-
-      const timeline = [];
-
-      custSales.forEach(s => {
-        timeline.push({
-          date: s.date + ' (' + s.time + ')',
-          desc: `${s.productName} (${s.cat === 'siment' ? 'সিমেন্ট' : 'রড'})`,
-          qty: `${s.qty} ${s.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}`,
-          rate: `৳ ${s.rate}`,
-          bill: s.total,
-          paid: 0,
-          timestamp: s.id.replace('S','')
         });
-      });
-
-      custPayments.forEach(p => {
-        timeline.push({
-          date: p.date + ' (' + p.time + ')',
-          desc: 'নগদ বাকি জমা/পরিশোধ',
-          qty: '--',
-          rate: '--',
-          bill: 0,
-          paid: p.amount,
-          timestamp: p.id.replace('DP','')
+        expenses.filter(e => e.date === today).slice().reverse().forEach(e => {
+          tb.innerHTML += `<tr><td>${e.date}</td><td><span class="badge-rod">${e.category}</span></td><td>${e.desc}</td><td><strong style="color:var(--red);">৳ ${e.amount.toFixed(2)}</strong></td></tr>`;
         });
-      });
+        document.getElementById('exp-total-office').innerText = `৳ ${to.toLocaleString('bn-BD')}`;
+        document.getElementById('exp-total-personal').innerText = `৳ ${tp.toLocaleString('bn-BD')}`;
+        document.getElementById('exp-total-all').innerText = `৳ ${ta.toLocaleString('bn-BD')}`;
 
-      timeline.sort((a,b) => b.timestamp - a.timestamp);
-
-      timeline.forEach(item => {
-        tbody.innerHTML += `
-          <tr>
-            <td>${item.date}</td>
-            <td><strong>${item.desc}</strong></td>
-            <td>${item.qty}</td>
-            <td>${item.rate}</td>
-            <td>${item.bill > 0 ? '৳ ' + item.bill.toFixed(2) : '--'}</td>
-            <td>${item.paid > 0 ? '<strong style="color:var(--green);">৳ ' + item.paid.toFixed(2) + '</strong>' : '--'}</td>
-          </tr>
-        `;
-      });
-
-      document.getElementById('stmt-total-due-display').innerText = (dues[custName] || 0).toFixed(2);
-      document.getElementById('cust-statement-modal').style.display = 'flex';
-    }
-
-    function closeCustStatementModal() {
-      document.getElementById('cust-statement-modal').style.display = 'none';
-    }
-
-    function openDuePaymentModal(cust) {
-      document.getElementById('due-pay-cust-name').value = cust;
-      document.getElementById('due-pay-cust-display').innerText = cust;
-      document.getElementById('due-payment-modal').style.display = 'flex';
-    }
-
-    function closeDuePaymentModal() {
-      document.getElementById('due-payment-modal').style.display = 'none';
-      document.getElementById('due-payment-form').reset();
-    }
-
-    document.getElementById('due-payment-form').onsubmit = function(e) {
-      e.preventDefault();
-      const cust = document.getElementById('due-pay-cust-name').value;
-      const payAmt = parseFloat(document.getElementById('due-pay-amount').value);
-      const today = new Date().toISOString().split('T')[0];
-
-      if (dues[cust]) {
-        dues[cust] -= payAmt;
-        if (dues[cust] < 0) dues[cust] = 0;
-      }
-
-      duePayments.push({
-        id: 'DP' + Date.now(),
-        custName: cust,
-        date: today,
-        time: new Date().toLocaleTimeString('bn-BD', { hour: '2-digit', minute: '2-digit' }),
-        amount: payAmt
-      });
-
-      saveData();
-      renderAll();
-      closeDuePaymentModal();
-      showCustomAlert('বাকির খাতা: কাস্টমার জমার টাকা সফলভাবে পরিশোধ এন্ট্রি হয়েছে!');
-    };
-
-    function openAddBankModal() {
-      document.getElementById('add-bank-modal').style.display = 'flex';
-    }
-
-    function closeAddBankModal() {
-      document.getElementById('add-bank-modal').style.display = 'none';
-      document.getElementById('add-bank-form').reset();
-    }
-
-    document.getElementById('add-bank-form').onsubmit = function(e) {
-      e.preventDefault();
-      const bName = document.getElementById('new-bank-name').value;
-      const bAcc = document.getElementById('new-bank-acc').value;
-      const bAddr = document.getElementById('new-bank-address').value;
-
-      banks.push({ id: 'B' + Date.now(), name: bName, accNo: bAcc, address: bAddr });
-      saveData();
-      renderAll();
-      closeAddBankModal();
-      showCustomAlert('ফাইন্যান্স ও ব্যাংকিং: নতুন ব্যাংক সফলভাবে যুক্ত হয়েছে!');
-    };
-
-    document.getElementById('bank-deposit-form').onsubmit = function(e) {
-      e.preventDefault();
-      const bName = document.getElementById('bank-select').value;
-      const amt = parseFloat(document.getElementById('bank-dep-amount').value);
-      const note = document.getElementById('bank-dep-note').value;
-      const dateInput = document.getElementById('bank-dep-date');
-      const date = dateInput.value;
-
-      bankTx.push({
-        id: 'BT' + Date.now(),
-        date: date,
-        bankName: bName,
-        amount: amt,
-        note: note
-      });
-
-      saveData();
-      renderAll();
-      this.reset();
-      dateInput.value = date;
-      showCustomAlert('ফাইন্যান্স ও ব্যাংকিং: নতুন ব্যাংক ডিপোজিট এন্ট্রি সংরক্ষণ করা হয়েছে!');
-    };
-
-    function renderBanking() {
-      const bTable = document.getElementById('bank-list-table');
-      bTable.innerHTML = '';
-      banks.slice().reverse().forEach(b => {
-        bTable.innerHTML += `<tr><td><strong>${b.name}</strong></td><td>${b.accNo || '--'}</td><td>${b.address || '--'}</td></tr>`;
-      });
-
-      const selectedMonth = document.getElementById('bank-month-filter')?.value || new Date().toISOString().substring(0,7);
-      const from = document.getElementById('bank-rpt-from').value;
-      const to = document.getElementById('bank-rpt-to').value;
-
-      const tbody = document.getElementById('banking-history-table');
-      tbody.innerHTML = '';
-      let totalDep = 0;
-      let bankWiseTotals = {};
-
-      let filtered = bankTx;
-      if (from && to) {
-        filtered = bankTx.filter(t => t.date >= from && t.date <= to);
-      } else if (selectedMonth) {
-        filtered = bankTx.filter(t => t.date.startsWith(selectedMonth));
-      }
-
-      filtered.slice().reverse().forEach(t => {
-        totalDep += t.amount;
-        bankWiseTotals[t.bankName] = (bankWiseTotals[t.bankName] || 0) + t.amount;
-
-        tbody.innerHTML += `
-          <tr>
-            <td>${t.date}</td>
-            <td><strong>${t.bankName}</strong></td>
-            <td><strong style="color:var(--green);">৳ ${t.amount.toLocaleString('bn-BD')}</strong></td>
-            <td>${t.note || '--'}</td>
-            <td>
-              <button class="btn-sm btn-info edit-elem" onclick="openEditBankModal('${t.id}')"><i class="fa-solid fa-pen-to-square"></i> এডিট</button>
-            </td>
-          </tr>
-        `;
-      });
-
-      document.getElementById('bank-total-deposited').innerText = `৳ ${totalDep.toLocaleString('bn-BD')}`;
-
-      const summaryDiv = document.getElementById('bank-wise-summary-list');
-      if(summaryDiv) {
-        let keys = Object.keys(bankWiseTotals);
-        if(keys.length === 0) {
-          summaryDiv.innerHTML = '<span style="color:var(--text-gray);">এই মাসে কোনো ব্যাংক জমার রেকর্ড নেই</span>';
-        } else {
-          summaryDiv.innerHTML = keys.map(k => `• ${k}: <b style="color:var(--green);">৳ ${bankWiseTotals[k].toLocaleString('bn-BD')}</b>`).join('<br>');
+        const g = document.getElementById('category-expense-summary-grid');
+        if(g){
+          g.innerHTML = '';
+          let k = Object.keys(cMap);
+          if(!k.length) g.innerHTML = '<div style="color:var(--text-gray);">কোনো খরচের রেকর্ড নেই।</div>';
+          else k.forEach(cat => { g.innerHTML += `<div style="background:#f8fafc; border:1px solid var(--border); padding:10px; border-radius:8px; display:flex; justify-content:space-between;"><span>${cat}</span><strong style="color:var(--red);">৳ ${cMap[cat].toLocaleString('bn-BD')}</strong></div>`; });
         }
-      }
-    }
+      };
 
-    function printMonthlyBankReport() {
-      const selectedMonth = document.getElementById('bank-month-filter')?.value || new Date().toISOString().substring(0,7);
-      document.getElementById('rpt-print-title').innerText = 'মাসিক ব্যাংক ডিপোজিট স্টেটমেন্ট';
-      document.getElementById('rpt-print-sub').innerText = `মাস: ${selectedMonth}`;
+      window.printMonthlyExpenseReport = function(){
+        const sm = document.getElementById('exp-month-filter')?.value || new Date().toISOString().substring(0, 7);
+        document.getElementById('rpt-print-title').innerText = 'মাসিক খরচের বিবরণী';
+        document.getElementById('rpt-print-sub').innerText = `মাস: ${sm}`;
+        let mExp = expenses.filter(e => e.date.startsWith(sm)), cMap = {}, gt = 0;
+        mExp.forEach(e => { cMap[e.category] = (cMap[e.category] || 0) + e.amount; gt += e.amount; });
+        let h = `<div style="margin-bottom:15px;"><b>খাতভিত্তিক খরচ:</b><br>` + Object.keys(cMap).map(c => `• ${c}: <b>৳ ${cMap[c].toLocaleString('bn-BD')}</b>`).join('<br>') + `<br><br><b>সর্বমোট খরচ: ৳ ${gt.toLocaleString('bn-BD')}</b></div><table><thead><tr><th>তারিখ</th><th>খাত</th><th>বিবরণ</th><th>টাকা</th></tr></thead><tbody>`;
+        mExp.forEach(e => { h += `<tr><td>${e.date}</td><td>${e.category}</td><td>${e.desc}</td><td>৳ ${e.amount.toLocaleString('bn-BD')}</td></tr>`; });
+        h += `</tbody></table>`;
+        document.getElementById('rpt-print-content').innerHTML = h;
+        const pa = document.getElementById('report-print-area');
+        pa.style.display = 'block';
+        window.print();
+        pa.style.display = 'none';
+      };
 
-      let monthTx = bankTx.filter(t => t.date.startsWith(selectedMonth));
-      let bankWise = {};
-      let grandTotal = 0;
+      window.renderExpenseReport = function(){
+        const from = document.getElementById('exp-rpt-from').value, to = document.getElementById('exp-rpt-to').value;
+        const cat = document.getElementById('exp-rpt-cat').value;
+        let fil = (from && to) ? expenses.filter(e => e.date >= from && e.date <= to) : expenses;
+        if(cat) fil = fil.filter(e => e.category === cat);
+        const tb = document.getElementById('full-expense-report-table');
+        tb.innerHTML = '';
+        fil.slice().reverse().forEach(e => { tb.innerHTML += `<tr><td>${e.date}</td><td><span class="badge-rod">${e.category}</span></td><td>${e.desc}</td><td><strong style="color:var(--red);">৳ ${e.amount.toFixed(2)}</strong></td></tr>`; });
+      };
 
-      monthTx.forEach(t => {
-        bankWise[t.bankName] = (bankWise[t.bankName] || 0) + t.amount;
-        grandTotal += t.amount;
-      });
+      window.resetExpenseReportFilter = function(){
+        document.getElementById('exp-rpt-from').value = '';
+        document.getElementById('exp-rpt-to').value = '';
+        document.getElementById('exp-rpt-cat').value = '';
+        renderExpenseReport();
+      };
 
-      let html = `<div style="margin-bottom:15px; font-size:14px;">
-        <b>কোন্ ব্যাংকে কত জমা (সামারি):</b><br>`;
-      Object.keys(bankWise).forEach(bName => {
-        html += `• ${bName}: <b>৳ ${bankWise[bName].toLocaleString('bn-BD')}</b><br>`;
-      });
-      html += `<br><b>সর্বমোট জমা: ৳ ${grandTotal.toLocaleString('bn-BD')}</b></div>`;
+      window.renderPurchaseReport = function(){
+        const from = document.getElementById('buy-rpt-from').value, to = document.getElementById('buy-rpt-to').value;
+        let fil = (from && to) ? purchases.filter(p => p.date >= from && p.date <= to) : purchases;
+        let tc = 0, tr = 0;
+        fil.forEach(p => { if(p.cat === 'siment') tc += p.qty; else tr += p.qty; });
+        document.getElementById('rpt-buy-total-cement').innerText = `${tc} ব্যাগ`;
+        document.getElementById('rpt-buy-total-rod').innerText = `${tr} কেজি`;
+        const tb = document.getElementById('purchase-report-table');
+        tb.innerHTML = '';
+        fil.slice().reverse().forEach(p => {
+          tb.innerHTML += `<tr><td><strong>${p.date}</strong></td><td><strong>${p.company || 'N/A'}</strong></td><td><span class="${p.payType === 'due' ? 'badge-due' : 'badge-cash'}">${p.payType === 'due' ? 'বাকি' : 'নগদ'}</span></td><td><span class="${p.cat === 'rod' ? 'badge-rod' : 'badge-cement'}">${p.cat === 'rod' ? 'রড' : 'সিমেন্ট'}</span></td><td><strong>${p.productName}</strong></td><td><strong>${p.qty} ${p.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}</strong></td><td><strong>৳ ${(p.total || 0).toFixed(2)}</strong></td></tr>`;
+        });
+      };
 
-      html += `<table>
-        <thead>
-          <tr>
-            <th>তারিখ</th>
-            <th>ব্যাংকের নাম</th>
-            <th>টাকার পরিমাণ (৳)</th>
-            <th>মন্তব্য / নোট</th>
-          </tr>
-        </thead>
-        <tbody>`;
+      window.resetBuyReportFilter = function(){
+        document.getElementById('buy-rpt-from').value = '';
+        document.getElementById('buy-rpt-to').value = '';
+        renderPurchaseReport();
+      };
 
-      monthTx.forEach(t => {
-        html += `<tr>
-          <td>${t.date}</td>
-          <td>${t.bankName}</td>
-          <td>৳ ${t.amount.toLocaleString('bn-BD')}</td>
-          <td>${t.note || '--'}</td>
-        </tr>`;
-      });
+      window.renderSalesReport = function(){
+        const from = document.getElementById('sell-rpt-from').value, to = document.getElementById('sell-rpt-to').value;
+        let fil = (from && to) ? sales.filter(s => s.date >= from && s.date <= to) : sales;
+        let tc = 0, tr = 0;
+        fil.forEach(s => { if(s.cat === 'siment') tc += s.qty; else tr += s.qty; });
+        document.getElementById('rpt-total-cement').innerText = `${tc} ব্যাগ`;
+        document.getElementById('rpt-total-rod').innerText = `${tr} কেজি`;
+        const tb = document.getElementById('sales-report-table');
+        tb.innerHTML = '';
+        fil.slice().reverse().forEach(s => {
+          tb.innerHTML += `<tr><td><strong>${s.date}</strong></td><td><span class="${s.cat === 'rod' ? 'badge-rod' : 'badge-cement'}">${s.cat === 'rod' ? 'রড' : 'সিমেন্ট'}</span></td><td><strong>${s.productName}</strong></td><td>${s.qty} ${s.cat === 'siment' ? 'ব্যাগ' : 'কেজি'}</td><td><strong>৳ ${s.total.toFixed(2)}</strong></td></tr>`;
+        });
+      };
 
-      html += `</tbody></table>`;
-      document.getElementById('rpt-print-content').innerHTML = html;
+      window.resetSellReportFilter = function(){
+        document.getElementById('sell-rpt-from').value = '';
+        document.getElementById('sell-rpt-to').value = '';
+        renderSalesReport();
+      };
 
-      const printArea = document.getElementById('report-print-area');
-      printArea.style.display = 'block';
-      window.print();
-      printArea.style.display = 'none';
-    }
-
-    function resetBankFilter() {
-      document.getElementById('bank-rpt-from').value = '';
-      document.getElementById('bank-rpt-to').value = '';
-      renderBanking();
-    }
-
-    function openEditBankModal(id) {
-      const t = bankTx.find(x => x.id === id);
-      if (!t) return;
-
-      document.getElementById('edit-bank-tx-id').value = t.id;
-      document.getElementById('edit-bank-dep-date').value = t.date;
-      document.getElementById('edit-bank-select').value = t.bankName;
-      document.getElementById('edit-bank-dep-amount').value = t.amount;
-      document.getElementById('edit-bank-dep-note').value = t.note || '';
-
-      document.getElementById('edit-bank-modal').style.display = 'flex';
-    }
-
-    function closeEditBankModal() {
-      document.getElementById('edit-bank-modal').style.display = 'none';
-      document.getElementById('edit-bank-deposit-form').reset();
-    }
-
-    document.getElementById('edit-bank-deposit-form').onsubmit = function(e) {
-      e.preventDefault();
-      const id = document.getElementById('edit-bank-tx-id').value;
-      const t = bankTx.find(x => x.id === id);
-
-      if (t) {
-        t.date = document.getElementById('edit-bank-dep-date').value;
-        t.bankName = document.getElementById('edit-bank-select').value;
-        t.amount = parseFloat(document.getElementById('edit-bank-dep-amount').value);
-        t.note = document.getElementById('edit-bank-dep-note').value;
-
-        saveData();
-        renderAll();
-        closeEditBankModal();
-        showCustomAlert('ফাইন্যান্স ও ব্যাংকিং: ডিপোজিট হিসাব আপডেট সম্পন্ন হয়েছে!');
-      }
-    };
-
-    function openAddExpCatModal() {
-      document.getElementById('add-expcat-modal').style.display = 'flex';
-    }
-
-    function closeAddExpCatModal() {
-      document.getElementById('add-expcat-modal').style.display = 'none';
-      document.getElementById('add-expcat-form').reset();
-    }
-
-    document.getElementById('add-expcat-form').onsubmit = function(e) {
-      e.preventDefault();
-      const cName = document.getElementById('new-expcat-name').value.trim();
-      if (cName && !expCategories.includes(cName)) {
-        expCategories.push(cName);
-        saveData();
-        renderAll();
-        closeAddExpCatModal();
-        showCustomAlert('দৈনন্দিন খরচ: নতুন খরচের খাত সফলভাবে যোগ করা হয়েছে!');
-      } else {
-        showCustomAlert('দৈনন্দিন খরচ: এই খাতটি ইতিমধ্যেই বিদ্যমান!');
-      }
-    };
-
-    document.getElementById('expense-form').onsubmit = function(e) {
-      e.preventDefault();
-      const today = new Date().toISOString().split('T')[0];
-      const cat = document.getElementById('exp-cat-select').value;
-      const desc = document.getElementById('exp-desc').value;
-      const amount = parseFloat(document.getElementById('exp-amount').value);
-
-      expenses.push({
-        id: 'E' + Date.now(),
-        date: today,
-        category: cat,
-        desc: desc,
-        amount: amount
-      });
-
-      saveData();
-      renderAll();
-      this.reset();
-      showCustomAlert('দৈনন্দিন খরচ: নতুন খরচ সফলভাবে সংরক্ষণ করা হয়েছে!');
-    };
-
-    function renderExpenses() {
-      const today = new Date().toISOString().split('T')[0];
-      const selectedMonth = document.getElementById('exp-month-filter')?.value || today.substring(0, 7);
-      const tbody = document.getElementById('expense-table-body');
-      tbody.innerHTML = '';
-      
-      let totOffice = 0, totPersonal = 0, totAll = 0;
-      let catWiseMap = {};
-
-      expenses.forEach(e => {
-        if (e.date.startsWith(selectedMonth)) {
-          totAll += e.amount;
-          if (e.category === 'অফিস') totOffice += e.amount;
-          if (e.category === 'ব্যক্তিগত নেওয়া') totPersonal += e.amount;
-
-          catWiseMap[e.category] = (catWiseMap[e.category] || 0) + e.amount;
-        }
-      });
-
-      expenses.filter(e => e.date === today).slice().reverse().forEach(e => {
-        tbody.innerHTML += `
-          <tr>
-            <td>${e.date}</td>
-            <td><span class="badge-rod">${e.category || 'সাধারণ'}</span></td>
-            <td>${e.desc}</td>
-            <td><strong style="color:var(--red);">৳ ${e.amount.toFixed(2)}</strong></td>
-          </tr>
-        `;
-      });
-
-      document.getElementById('exp-total-office').innerText = `৳ ${totOffice.toLocaleString('bn-BD')}`;
-      document.getElementById('exp-total-personal').innerText = `৳ ${totPersonal.toLocaleString('bn-BD')}`;
-      document.getElementById('exp-total-all').innerText = `৳ ${totAll.toLocaleString('bn-BD')}`;
-
-      const grid = document.getElementById('category-expense-summary-grid');
-      if (grid) {
-        grid.innerHTML = '';
-        const keys = Object.keys(catWiseMap);
-        if (keys.length === 0) {
-          grid.innerHTML = '<div style="color:var(--text-gray); font-size:0.9rem;">এই নির্বাচিত মাসে কোনো খরচের এন্ট্রি নেই।</div>';
-        } else {
-          keys.forEach(catKey => {
-            grid.innerHTML += `
-              <div style="background:#f8fafc; border:1px solid var(--border); padding:10px 14px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-weight:600;">${catKey}</span>
-                <strong style="color:var(--red);">৳ ${catWiseMap[catKey].toLocaleString('bn-BD')}</strong>
-              </div>
-            `;
-          });
-        }
-      }
-    }
-
-    function printMonthlyExpenseReport() {
-      const selectedMonth = document.getElementById('exp-month-filter')?.value || new Date().toISOString().substring(0, 7);
-      document.getElementById('rpt-print-title').innerText = 'মাসিক খাতভিত্তিক খরচের বিবরণী (Monthly Expense Sheet)';
-      document.getElementById('rpt-print-sub').innerText = `মাস: ${selectedMonth}`;
-
-      let monthExpenses = expenses.filter(e => e.date.startsWith(selectedMonth));
-      let catMap = {};
-      let grandTotal = 0;
-
-      monthExpenses.forEach(e => {
-        catMap[e.category] = (catMap[e.category] || 0) + e.amount;
-        grandTotal += e.amount;
-      });
-
-      let html = `<div style="margin-bottom:15px; font-size:14px;">
-        <b>খাতভিত্তিক খরচের সামারি:</b><br>`;
-      Object.keys(catMap).forEach(cName => {
-        html += `• ${cName}: <b>৳ ${catMap[cName].toLocaleString('bn-BD')}</b><br>`;
-      });
-      html += `<br><b>সর্বমোট খরচ: ৳ ${grandTotal.toLocaleString('bn-BD')}</b></div>`;
-
-      html += `<table>
-        <thead>
-          <tr>
-            <th>তারিখ</th>
-            <th>খাত (Category)</th>
-            <th>বিবরণ (Description)</th>
-            <th>টাকার পরিমাণ (৳)</th>
-          </tr>
-        </thead>
-        <tbody>`;
-
-      monthExpenses.forEach(e => {
-        html += `<tr>
-          <td>${e.date}</td>
-          <td>${e.category}</td>
-          <td>${e.desc}</td>
-          <td>৳ ${e.amount.toLocaleString('bn-BD')}</td>
-        </tr>`;
-      });
-
-      html += `</tbody></table>`;
-      document.getElementById('rpt-print-content').innerHTML = html;
-
-      const printArea = document.getElementById('report-print-area');
-      printArea.style.display = 'block';
-      window.print();
-      printArea.style.display = 'none';
-    }
-
-    function renderExpenseReport() {
-      const from = document.getElementById('exp-rpt-from').value;
-      const to = document.getElementById('exp-rpt-to').value;
-      const selectedCat = document.getElementById('exp-rpt-cat').value;
-
-      let filtered = expenses;
-      if (from && to) {
-        filtered = filtered.filter(e => e.date >= from && e.date <= to);
-      }
-      if (selectedCat) {
-        filtered = filtered.filter(e => e.category === selectedCat);
-      }
-
-      const tbody = document.getElementById('full-expense-report-table');
-      tbody.innerHTML = '';
-      filtered.slice().reverse().forEach(e => {
-        tbody.innerHTML += `
-          <tr>
-            <td>${e.date}</td>
-            <td><span class="badge-rod">${e.category || 'সাধারণ'}</span></td>
-            <td>${e.desc}</td>
-            <td><strong style="color:var(--red);">৳ ${e.amount.toFixed(2)}</strong></td>
-          </tr>
-        `;
-      });
-    }
-
-    function resetExpenseReportFilter() {
-      document.getElementById('exp-rpt-from').value = '';
-      document.getElementById('exp-rpt-to').value = '';
-      document.getElementById('exp-rpt-cat').value = '';
-      renderExpenseReport();
-    }
-
-    function renderPurchaseReport() {
-      const from = document.getElementById('buy-rpt-from').value;
-      const to = document.getElementById('buy-rpt-to').value;
-
-      let filtered = purchases;
-      if (from && to) {
-        filtered = purchases.filter(p => p.date >= from && p.date <= to);
-      }
-
-      let totCement = 0, totRod = 0;
-
-      filtered.forEach(p => {
-        if (p.cat === 'siment') totCement += p.qty;
-        else totRod += p.qty;
-      });
-
-      document.getElementById('rpt-buy-total-cement').innerText = `${totCement} ব্যাগ`;
-      document.getElementById('rpt-buy-total-rod').innerText = `${totRod} কেজি`;
-
-      const tbody = document.getElementById('purchase-report-table');
-      tbody.innerHTML = '';
-      
-      filtered.slice().reverse().forEach(p => {
-        const unit = p.cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-        const pTypeBadge = p.payType === 'due' ? '<span class="badge-due">বাকি</span>' : '<span class="badge-cash">নগদ</span>';
-        tbody.innerHTML += `
-          <tr>
-            <td><strong>${p.date}</strong></td>
-            <td><strong>${p.company || 'N/A'}</strong></td>
-            <td>${pTypeBadge}</td>
-            <td><span class="${p.cat === 'rod' ? 'badge-rod' : 'badge-cement'}">${p.cat === 'rod' ? 'রড' : 'সিমেন্ট'}</span></td>
-            <td><strong>${p.productName}</strong></td>
-            <td><strong>${p.qty} ${unit}</strong></td>
-            <td><strong>৳ ${(p.total || 0).toFixed(2)}</strong></td>
-          </tr>
-        `;
-      });
-    }
-
-    function resetBuyReportFilter() {
-      document.getElementById('buy-rpt-from').value = '';
-      document.getElementById('buy-rpt-to').value = '';
-      renderPurchaseReport();
-    }
-
-    function renderSalesReport() {
-      const from = document.getElementById('sell-rpt-from').value;
-      const to = document.getElementById('sell-rpt-to').value;
-
-      let filtered = sales;
-      if (from && to) {
-        filtered = sales.filter(s => s.date >= from && s.date <= to);
-      }
-
-      let totCement = 0, totRod = 0;
-
-      filtered.forEach(s => {
-        if (s.cat === 'siment') totCement += s.qty;
-        else totRod += s.qty;
-      });
-
-      document.getElementById('rpt-total-cement').innerText = `${totCement} ব্যাগ`;
-      document.getElementById('rpt-total-rod').innerText = `${totRod} কেজি`;
-
-      const tbody = document.getElementById('sales-report-table');
-      tbody.innerHTML = '';
-      
-      filtered.slice().reverse().forEach(s => {
-        const unit = s.cat === 'siment' ? 'ব্যাগ' : 'কেজি';
-        tbody.innerHTML += `
-          <tr>
-            <td><strong>${s.date}</strong></td>
-            <td><span class="${s.cat === 'rod' ? 'badge-rod' : 'badge-cement'}">${s.cat === 'rod' ? 'রড' : 'সিমেন্ট'}</span></td>
-            <td><strong>${s.productName}</strong></td>
-            <td>${s.qty} ${unit}</td>
-            <td><strong>৳ ${s.total.toFixed(2)}</strong></td>
-          </tr>
-        `;
-      });
-    }
-
-    function resetSellReportFilter() {
-      document.getElementById('sell-rpt-from').value = '';
-      document.getElementById('sell-rpt-to').value = '';
-      renderSalesReport();
-    }
+      window.onload = function(){ initAppSession(); };
+    })();
   </script>
 </body>
 </html>
